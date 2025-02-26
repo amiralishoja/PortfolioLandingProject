@@ -1,28 +1,49 @@
 @media (prefers-reduced-motion: no-preference) {
+
     .project,
     .skills {
         transform-origin: center 0;
-        transform: scale(0.7);
-        opacity: 0;
-        animation: load-scale linear forwards, load-opacity linear forwards;
+        animation:
+            load-scale linear forwards,
+            load-opacity linear forwards;
         animation-timeline: view();
         animation-range: entry;
         animation-range-start: 0px;
         animation-range-end: 450px;
     }
+
     .footer {
         transform-origin: center 0;
         opacity: 0.4;
         animation: load-opacity linear forwards;
         animation-timeline: view();
         animation-range-start: 0px;
-        animation-range-end: 450px;    }
+        animation-range-end: 450px;
+    }
 }
 
 @keyframes load-scale {
-    to { transform: scale(1);}
+    from {
+        scale: 0.7;
+    }
+
+    to {
+        scale: 1;
+    }
 }
 
 @keyframes load-opacity {
-    to { opacity: 1;}
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes changeScale {
+    to {
+        scale: 0.9
+    }
 }

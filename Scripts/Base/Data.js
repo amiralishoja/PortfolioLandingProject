@@ -11,29 +11,27 @@ const menu = [
 
 const dataBase = {
     social: [
-        { id: 1, name: "Linkedin", src: "Images/Social/linkedin.svg", href: "https://www.linkedin.com/in/amirali-shoja-459b652ab" },
-        { id: 2, name: "Telegram", src: "Images/Social/Telegram.svg", href: "https://t.me/amirali_shoja" },
-        { id: 3, name: "Instagram", src: "Images/Social/Instagram.svg", href: "https://instagram.com/amirali.shoja" },
-        { id: 4, name: "GitHub", src: "Images/Social/Github.svg", href: "https://github.com/amiralishoja" },
-        { id: 5, name: "Spotify", src: "Images/Social/Spotify.svg", href: "https://open.spotify.com/user/3172y5iz5tv42jhub36opkevig2i?si=fFMgefC1QkGhyyefVHLCjw" }
+        { id: 1, name: "Linkedin", src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FSocial%2FLinkedin.svg", href: "https://www.linkedin.com/in/amiralishoja" },
+        { id: 2, name: "Telegram", src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FSocial%2FTelegram.svg", href: "https://t.me/amirali_shoja" },
+        { id: 3, name: "GitHub", src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FSocial%2FGithub.svg", href: "https://github.com/amiralishoja" }
     ],
     skills: [
-        { id: 1, name: "Html", src: "Images/Skills/Html.svg", caption: "Elements Attributes Links Pictures Tables Lists Layout Forms Medias ..." },
-        { id: 2, name: "Css", src: "Images/Skills/Css.svg", caption: "Selectors Units Fonts Viewports Variables Animations Backgrounds Function Media Query Grid System Flexbox ..." },
-        { id: 3, name: "Sass", src: "Images/Skills/Sass.svg", caption: "Variables Nestings Import Partials Mixins Include Extend Function Maps Interpolation Conditions Loops ..." },
-        { id: 4, name: "JavaScript", src: "Images/Skills/JavaScript.svg", caption: "Variables Operators Data Types Function Events Arrays & Objects Data Methods Loops Error Hadelling Dom Bom Styles Conditions ..." }
+        { id: 1, name: "Html", src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FSkills%2FHtml.svg", caption: "Elements Attributes Links Pictures Tables Lists Layout Forms Medias ..." },
+        { id: 2, name: "Css", src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FSkills%2FCss.svg", caption: "Selectors Units Fonts Viewports Variables Animations Backgrounds Function Media Query Grid System Flexbox ..." },
+        { id: 3, name: "Sass", src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FSkills%2FSass.svg", caption: "Variables Nestings Import Partials Mixins Include Extend Function Maps Interpolation Conditions Loops ..." },
+        { id: 4, name: "JavaScript", src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FSkills%2FJavaScript.svg", caption: "Variables Operators Data Types Function Events Arrays & Objects Data Methods Loops Error Hadelling Dom Bom Styles Conditions ..." }
     ],
     project: [
         {
             id: 1,
             name: "Rsdetailing",
-            src: "Images/Project/1.webp",
+            src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F1.webp",
             srcset: [
-                "Images/Project/1.400w.webp",
-                "Images/Project/1.681w.webp",
-                "Images/Project/1.946w.webp",
-                "Images/Project/1.1165w.webp",
-                "Images/Project/1.1422w.webp",
+                { id: 1, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F1.681w.webp", size: "681w" },
+                { id: 2, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F1.400w.webp", size: "400w" },
+                { id: 3, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F1.946w.webp", size: "946w" },
+                { id: 4, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F1.1165w.webp", size: "1165w" },
+                { id: 5, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F1.1422w.webp", size: "1422w" }
             ],
             caption: "This landing page example is producd with Html Css and a little Javascript",
             href: "https://rsdetailing.wuaze.com"
@@ -41,14 +39,14 @@ const dataBase = {
         {
             id: 2,
             name: "Hostinger",
-            src: "Images/Project/2.webp",
+            src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F2.webp",
             srcset: [
-                "Images/Project/2.400w.webp",
-                "Images/Project/2.688w.webp",
-                "Images/Project/2.948w.webp",
-                "Images/Project/2.1087w.webp",
-                "Images/Project/2.1337w.webp",
-                "Images/Project/2.1423w.webp",
+                { id: 1, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F2.688w.webp", size: "688w" },
+                { id: 2, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F2.400w.webp", size: "400w" },
+                { id: 3, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F2.948w.webp", size: "948w" },
+                { id: 4, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F2.1087w.webp", size: "1087w" },
+                { id: 5, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F2.1337w.webp", size: "1337w" },
+                { id: 6, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F2.1423w.webp", size: "1423w" }
             ],
             caption: "This landing page example is producd with Html Sass and a little Javascript",
             href: "https://hostinger.wuaze.com"
@@ -56,20 +54,20 @@ const dataBase = {
         {
             id: 3,
             name: "Motel",
-            src: "Images/Project/3.webp",
+            src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F3.webp",
             srcset: [
-                "Images/Project/3.400w.webp",
-                "Images/Project/3.563w.webp",
-                "Images/Project/3.694w.webp",
-                "Images/Project/3.704w.webp",
-                "Images/Project/3.990w.webp",
-                "Images/Project/3.1005w.webp",
-                "Images/Project/3.1088w.webp",
-                "Images/Project/3.1171w.webp",
-                "Images/Project/3.1270w.webp",
-                "Images/Project/3.1339w.webp",
-                "Images/Project/3.1348w.webp",
-                "Images/Project/3.1422w.webp",
+                { id: 1, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F3.400w.webp", size: "400w" },
+                { id: 2, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F3.563w.webp", size: "563w" },
+                { id: 3, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F3.694w.webp", size: "694w" },
+                { id: 4, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F3.704w.webp", size: "704w" },
+                { id: 5, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F3.990w.webp", size: "990w" },
+                { id: 6, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F3.1005w.webp", size: "1005w" },
+                { id: 7, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F3.1088w.webp", size: "1088w" },
+                { id: 8, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F3.1171w.webp", size: "1171w" },
+                { id: 9, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F3.1270w.webp", size: "1270w" },
+                { id: 10, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F3.1339w.webp", size: "1339w" },
+                { id: 11, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F3.1348w.webp", size: "1348w" },
+                { id: 12, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FProject%2F3.1422w.webp", size: "1422w" }
             ],
             caption: "This landing page example is producd with Html Css and a little Javascript",
             href: "https://motel.wuaze.com"
@@ -79,21 +77,21 @@ const dataBase = {
         owner: "Amirali Shoja",
         logo: "Shoja.com",
         slogan: "A Programmer Who Loves Front End",
-        pictureSrc: "Images/About/Picture.webp",
+        pictureSrc: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FAbout%2FPicture.webp",
         pictureSrcset: [
-            "Images/About/Picture.300w.webp",
-            "Images/About/Picture.555w.webp",
-            "Images/About/Picture.727w.webp",
-            "Images/About/Picture.905w.webp",
-            "Images/About/Picture.1027w.webp",
-            "Images/About/Picture.1104w.webp",
-            "Images/About/Picture.1201w.webp",
-            "Images/About/Picture.1278w.webp",
-            "Images/About/Picture.1390w.webp",
-            "Images/About/Picture.1489w.webp",
-            "Images/About/Picture.1518w.webp",
-            "Images/About/Picture.1613w.webp",
-            "Images/About/Picture.1920w.webp",
+            { id: 1, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FAbout%2FPicture.300w.webp", size: "300w" },
+            { id: 2, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FAbout%2FPicture.555w.webp", size: "555w" },
+            { id: 3, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FAbout%2FPicture.727w.webp", size: "727w" },
+            { id: 4, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FAbout%2FPicture.905w.webp", size: "905w" },
+            { id: 5, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FAbout%2FPicture.1027w.webp", size: "1027w" },
+            { id: 6, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FAbout%2FPicture.1104w.webp", size: "1104w" },
+            { id: 7, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FAbout%2FPicture.1201w.webp", size: "1201w" },
+            { id: 8, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FAbout%2FPicture.1278w.webp", size: "1278w" },
+            { id: 9, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FAbout%2FPicture.1390w.webp", size: "1390w" },
+            { id: 10, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FAbout%2FPicture.1489w.webp", size: "1489w" },
+            { id: 11, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FAbout%2FPicture.1518w.webp", size: "1518w" },
+            { id: 12, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FAbout%2FPicture.1613w.webp", size: "1613w" },
+            { id: 13, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FAbout%2FPicture.1920w.webp", size: "1920w" }
         ],
         keyWords: "amirali shoja, developer, front-end, java script, freelancer, remote work",
         title: "To infinity and beyond",

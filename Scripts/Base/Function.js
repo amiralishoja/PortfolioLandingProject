@@ -56,11 +56,10 @@ function setPropertyStyleElement(name, value, element = document.documentElement
 // This function makes the addresses of images along with their pixel size
 
 function generateSrcsetAttributeElement(array) {
-    const newArray = array.map(function (src) {
-        const imagePixelSize = src.split(".")[1]
-        return `${src} ${imagePixelSize},`
+    const newArray = array.map(function (picture) {
+        return `${picture.src} ${picture.size}`
     })
-    return newArray.join(" ")
+    return newArray.join(", ")
 }
 
 function generateSizesAttributeElement(xxLarg, xLarg, larg, medium, small, other = "calc(100vw - 20px)") {
@@ -204,6 +203,28 @@ function changeValueInResize() {
         hideMobileMenu()
     }
     skillsElementOffsetWidth = [...skillsContainerElement.children][0].offsetWidth
+    // if (projectElementCount) {
+    //     displayProject()
+    // }
+    // else if (projectElementMobileCount) {
+    //     displayProject()
+    // }
+    const nowProjectElementCount = changeValueTwoConditional(window.innerWidth > 567, projectElementDesktopCount, projectElementMobileCount);
+    currentProjectPage = 1;
+    if (nowProjectElementCount !== projectElementCount) {
+        displayProject()
+    }
+}
+
+// This function assigns the corect value to the main variable by checking a binary condition
+
+function changeValueTwoConditional (condition, trueValue, falseValue) {
+    if (condition) {
+        return trueValue
+    }
+    else {
+        return falseValue
+    }
 }
 
 // This is function hides loading element
@@ -352,7 +373,9 @@ function animateSkillsTranslation() {
     const skillsWrapperElemOffsetWidth = skillsWrapperElement.offsetWidth
     skillsTranslationCount++
 
-    setPropertyStyleElement("--time", `${speedTranslateSkillsElem}ms`, skillsContainerElement)
+    setPropertyStyleElement("--speed", `${speedTranslateSkillsElem}ms`, skillsContainerElement)
+    setPropertyStyleElement("--time", `${skillsTranslationDuration}ms`, skillsContainerElement)
+    setPropertyStyleElement("--delay", `${speedTranslateSkillsElem}ms`, skillsContainerElement)
     setPropertyStyleElement("--width", `${skillsElementOffsetWidth}px`, skillsContainerElement)
     setPropertyStyleElement("--i", skillsTranslationCount, skillsContainerElement)
 
@@ -363,7 +386,7 @@ function animateSkillsTranslation() {
     }
     if (skillsTranslationCount === skillsCount) {
         setTimeout(function () {
-            setPropertyStyleElement("--time", "0ms", skillsContainerElement)
+            setPropertyStyleElement("--speed", "0ms", skillsContainerElement)
             setPropertyStyleElement("--i", 0, skillsContainerElement)
 
             skillsTranslationCount = 0;
@@ -375,11 +398,12 @@ function animateSkillsTranslation() {
 // This is function creates "project" an its components
 
 function displayProject() {
+    projectElementCount = changeValueTwoConditional(window.innerWidth > 576, projectElementDesktopCount, projectElementMobileCount)
     displayProjectListItem(dataBase.project, projectContainerElement, projectElementCount, ProjectPageCount, currentProjectPage)
-    if (projectCount > projectElementCount) {
-        generateProjectPagination(dataBase.project, projectPagesElement, projectElementCount)
-    }
+    generateProjectPagination(dataBase.project, projectPagesElement, projectElementCount)
 }
+
+
 
 // This is fucntion determines the position of the domain required by the projects
 
@@ -411,7 +435,7 @@ function generateProjectItem(project) {
             <div class="project__content">
                 <H4 class="project__content__title">${project.name}</H4>
                 <p class="project__content__caption">${project.caption}</p>
-                <a href="${project.href}" class="button button--show-project">
+                <a href="${project.href}" class="button button--fixed button--show-project">
                     <i class="button__icon fas fa-arrow-circle-right"></i>
                     <p class="button__title">Online Preview</p>
                 </a>
@@ -423,18 +447,23 @@ function generateProjectItem(project) {
 // This is function generates project pagination button in the "project" section
 
 function generateProjectPagination(array, container, rowsCount) {
-    let countPages = Math.ceil(array.length / rowsCount)
-    if (countPages > ProjectPageCount) {
-        countPages = ProjectPageCount
+    if (projectCount > projectElementCount) {
+        let countPages = Math.ceil(array.length / rowsCount)
+        if (countPages > ProjectPageCount) {
+            countPages = ProjectPageCount
+        }
+        container.innerHTML = ""
+        const prevPageButton = generateSubsPrevButton("prev")
+        container.append(prevPageButton)
+        for (let i = 1; i <= countPages; i++) {
+            generatePaginationButton(i, array, container)
+        }
+        const subsPageButton = generateSubsPrevButton("subs")
+        container.append(subsPageButton)
     }
-    container.innerHTML = ""
-    const prevPageButton = generateSubsPrevButton("prev")
-    container.append(prevPageButton)
-    for (let i = 1; i <= countPages; i++) {
-        generatePaginationButton(i, array, container)
+    else {
+        container.innerHTML = ""
     }
-    const subsPageButton = generateSubsPrevButton("subs")
-    container.append(subsPageButton)
 }
 
 // This is function generates subsequent and previous button

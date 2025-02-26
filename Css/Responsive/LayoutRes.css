@@ -59,7 +59,7 @@
         top: calc(100% + var(--padding) * 1.5);
         right: var(--padding);
         left: var(--padding);
-        width: max-content;
+        width: calc(100% - (2 * 42px) - (4 * var(--padding)));
         margin: 0 auto;
         height: max-content;
         flex-flow: column nowrap;
@@ -71,9 +71,9 @@
     }
 
     .menu__link {
-        padding: 0.8rem 1.6rem;
+        padding: 1rem 1.6rem;
         width: 100%;
-        justify-content: end;
+        justify-content: center;
         align-items: center;
         border-radius: 0.5rem;
         background-color: var(--menuItem-bg-color);

@@ -15,8 +15,11 @@
 .row--skills {
     justify-content: start;
     flex-wrap: nowrap;
-    transition: all var(--time) ease; transform: translateX(calc((var(--width) * -1 - var(--padding)) * var(--i)));
+    transition: all var(--speed) ease;
+    transform: translateX(calc((var(--width) * -1 - var(--padding)) * var(--i)));
+    animation: changeScale calc(var(--time) / 2) var(--delay) alternate infinite;
 }
+
 .skills__item {
     width: 100%;
     height: 18rem;
