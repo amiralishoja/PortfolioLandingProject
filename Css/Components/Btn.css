@@ -1,11 +1,11 @@
 /* 
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-    Btn Components 
+    button Components 
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 */
 
-.btn {
-    background-image: var(--btn-bg-gradient-color, var(--lime-blue-gradient-color));
+.button {
+    background-image: var(--button-bg-gradient-color, var(--lime-blue-gradient-color));
     border-radius: 0.8rem;
     font-size: 1.8rem;
     display: flex;
@@ -18,15 +18,15 @@
     transition: padding var(--transition);
 }
 
-.btn:hover {
+.button:hover {
     padding: 1rem 1.5rem 1rem 4.4rem;
 }
 
-.btn:hover .btn__icon {
+.button:hover .button__icon {
     right: calc(100% - 3.4rem);
 }
 
-.btn__icon {
+.button__icon {
     transition: right var(--transition);
     position: absolute;
     top: 0;
@@ -38,16 +38,16 @@
     font-size: 2.4rem;
 }
 
-.btn__title {}
+.button__title {}
 
-.btn--skills {
-    --btn-bg-gradient-color: linear-gradient(45deg, #08AEEA 0%, #0cffeb 100%);
+.button--skills {
+    --button-bg-gradient-color: linear-gradient(45deg, #08AEEA 0%, #0cffeb 100%);
 }
 
-.btn--project {
-    --btn-bg-gradient-color: linear-gradient(45deg, #ff8100 0%, #ffd000 100%);
+.button--project {
+    --button-bg-gradient-color: linear-gradient(45deg, #ff8100 0%, #ffd000 100%);
 }
 
-.btn--show-project {
+.button--show-project {
     width: 100%;
 }

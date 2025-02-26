@@ -6,7 +6,7 @@
 
 .footer {
     background-color: var(--footer-bg-color);
-    padding: 3rem 0 1rem 0;
+    padding: 3rem 0 0.5rem 0;
 }
 
 .footer__content {
@@ -16,17 +16,17 @@
     justify-content: center;
     gap: 1.5rem;
 }
-.footer__content__title {
+.footer__title {
     font-size: 5rem;
     font-family: var(--jost-black-font);
 }
-.footer__content__caption {
+.footer__caption {
     font-size: 1.7rem;
 }
 .footer__contact  {
     width: 100%;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
     align-items: center;
     gap: 1.5rem;
 }
@@ -41,11 +41,11 @@
 
 .footer__sms__icon,
 .footer__email__icon {
-    padding: 0.5rem;
-    border-radius: 0.8rem;
-    background-color: var(--social-bg-color);
-    width: 4.4rem;
-    height: 4.4rem;
+    padding: 0.8rem;
+    font-size: 2.8rem;
+    border-radius: 0.5rem;
+    color: var(--footer-icon-color);
+    background-color: var(--footer-icon-bg-color);
     transition: background-color var(--transition);
 }
 
@@ -55,35 +55,12 @@
     font-size: 2rem;
 }
 
-.footer__social {
-    width: 100%;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    gap: 1rem;
-}
-.social__item {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    padding: 0.5rem;
-    border-radius: 0.8rem;
-    background-color: var(--social-bg-color);
-    transition: background-color var(--transition);
-}
-.social__item:hover,
 .footer__sms:hover .footer__sms__icon,
 .footer__email:hover .footer__email__icon {
     --social-bg-color: var(--reverse-box-color);
 }
-.social__img {
-    width: 3.5rem;
-    height: 3.5rem;
-}
 
-.footer__txt {
+.footer__copy-right {
     font-family: var(--jost-semibold-font);
     font-size: 2rem;
     text-align: center;

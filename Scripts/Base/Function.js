@@ -1,273 +1,522 @@
-function removeActiveClass(className) {
+// This is function deletes the activated classes of an element
+
+function removeActiveClassName(className) {
     if ($.querySelector(`.${className}`)) {
         $.querySelector(`.${className}`).classList.remove(className)
     }
 }
 
-function menuItemGenerator(menuItem) {
-    const newLinkElem = $.createElement("a")
-    newLinkElem.className = "menu__link"
-    newLinkElem.dataset.sectionId = menuItem.href;
-    if (menuItem.id === 1) {
-        newLinkElem.classList.add("menu__link--active")
-    }
-    newLinkElem.addEventListener("click", function () {
-        removeActiveClass("menu__link--active")
-        newLinkElem.classList.add("menu__link--active")
-        if (window.innerWidth < 767) {
-            hideMenu()
-        }
-        scrollSection(newLinkElem.dataset.sectionId)
-    })
-    newLinkElem.insertAdjacentHTML("beforeend", '<li class="menu__item">' + menuItem.name + '</li><i class="menu__icon ' + menuItem.class + '">')
-    menuContainer.append(newLinkElem)
+// This is function scrolls the page to the desired section
 
-}
-
-function scrollSection(sectionId) {
+function scrollToSection(sectionId) {
     const sectionOffsetTop = $.querySelector(sectionId).offsetTop
-    window.scrollTo(0, sectionOffsetTop - navbarElemHeight + 1)
+    window.scrollTo(0, sectionOffsetTop - navigationElementOffsetHeight + 1)
 }
 
-function socialItemGenerator(socialItem) {
-    socialWrapperElem.insertAdjacentHTML("beforeend", '<div class="social"><img class= "social__icon" src = "' + socialItem.src + '" alt = "' + socialItem.name + '"><p class="social__text">' + socialItem.name + '</p><a class="social__link" href="' + socialItem.href + '"><svg class="social__flash" fill="black" viewBox="0 0 24 24" stroke-width="2" stroke="black" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"/></svg></a></div>');
-    countSocialElem = socialWrapperElem.childElementCount;
+// This is function hides mobile menu element and its related elements
+
+function hideMobileMenu() {
+    menuContainerElement.classList.remove("dis-flex")
+    coverElement.classList.remove("dis-flex")
+    mobileMenuButtonIconElement.className = "navigation__mobile-icon fa-solid fa-bars"
+    menuButtonFlag = true
 }
 
-function animationSocialTranslateYHandler() {
-    countSocialTranslateY++
-    socialWrapperElem.style.setProperty("--time", `${speedTranslateSocialElem}ms`)
-    socialWrapperElem.style.setProperty("--height", `${socialElemOffsetHeight}px`)
-    socialWrapperElem.style.setProperty("--i", countSocialTranslateY)
-    if (countSocialElem === countSocialTranslateY) {
-        [...socialWrapperElem.children].forEach(function (elem) {
-            cloneElementHandler(elem, socialWrapperElem)
-        })
-        setTimeout(function () {
-            socialWrapperElem.style.setProperty("--time", "0ms")
-            socialWrapperElem.style.setProperty("--i", 0)
-            countSocialTranslateY = 0;
-            [...socialWrapperElem.children].map(removeCloneChildHandler)
-        }, speedTranslateSocialElem);
+// This is function shows mobile menu element and its related elements
 
-    }
+function showMobileMenu() {
+    menuContainerElement.classList.add("dis-flex")
+    coverElement.classList.add("dis-flex")
+    mobileMenuButtonIconElement.className = "navigation__mobile-icon fa-solid fa-xmark"
+    menuButtonFlag = false
 }
 
-function animationSkillsTranslateYHandler() {
-    countSkillsTranslateY++
-    skillsContainer.style.setProperty("--time", `${speedTranslateSkillsElem}ms`)
-    skillsContainer.style.setProperty("--width", `${skillsElemOffsetWidth}px`)
-    skillsContainer.style.setProperty("--i", countSkillsTranslateY)
-    if (countSkillsElem + 1 - Math.round(skillsWrapperElemOffsetWidth / skillsElemOffsetWidth) === countSkillsTranslateY) {
-        [...skillsContainer.children].forEach(function (elem) {
-            cloneElementHandler(elem, skillsContainer)
-        })
-    }
-    if (countSkillsTranslateY === countSkillsElem) {
-        setTimeout(function () {
-            skillsContainer.style.setProperty("--time", "0ms")
-            skillsContainer.style.setProperty("--i", 0)
-            countSkillsTranslateY = 0;
-            [...skillsContainer.children].map(removeCloneChildHandler)
-        }, speedTranslateSkillsElem);
-    }
-}
+// This is function creates clone element
 
-function skillsItemGenerator(skill) {
-    skillsContainer.insertAdjacentHTML("beforeend", '<div class="col-12 col-lg-6 col-xxl-4 flex-center"><div class="skills__item"><img src="' + skill.src + '" alt="Html" class="skills__picture"><div class="skills__content"><h3 class="skills__title">' + skill.name + '</h3><p class="skills__caption">' + skill.caption + '</p></div></div></div>');
-    countSkillsElem = skillsContainer.childElementCount;
-    skillsElemOffsetWidth = [...skillsContainer.children][0].offsetWidth
-}
-
-function cloneElementHandler(elem, container) {
+function createdCloneElement(elem, container) {
     const cloneElem = elem.cloneNode(true)
     cloneElem.setAttribute("aria-hidden", "true")
     container.append(cloneElem)
 }
 
-function removeCloneChildHandler(child) {
+// This is function deletes clone element
+
+function removeCloneElement(child) {
     if (child.getAttribute("aria-hidden") === "true") {
         child.remove()
     }
 }
 
-function projectItemGenerator(project) {
-    projectContainer.insertAdjacentHTML("beforeend", '<div class="col-12 col-sm-6 col-lg-4"><div class="project__item"><img src="' + project.src + '" alt="' + project.name + '" class="project__img"><div class="project__content"><h4 class="project__content__title">' + project.name + '</h4><p class="project__content__caption">' + project.caption + '</p><a href="' + project.href + '" class="btn btn--show-project"><i class="btn__icon fas fa-arrow-circle-right"></i><p class="btn__title">Online Preview</p></a></div></div></div>')
+// This is function creates property in element
+
+function setPropertyStyleElement(name, value, element = document.documentElement) {
+    element.style.setProperty(name, value);
 }
 
-function hideMenu() {
-    menuContainer.classList.toggle("dis-flex")
-    coverElem.classList.toggle("dis-flex")
-    menuMobileBtnIcon.className = "navbar__mobileBtn__icon fa-solid fa-bars"
-    btnMenuFlag = true
+// This function makes the addresses of images along with their pixel size
+
+function generateSrcsetAttributeElement(array) {
+    const newArray = array.map(function (src) {
+        const imagePixelSize = src.split(".")[1]
+        return `${src} ${imagePixelSize},`
+    })
+    return newArray.join(" ")
 }
 
-function menuItemClickHandler() {
-    menuContainer.classList.toggle("dis-flex")
-    coverElem.classList.toggle("dis-flex")
-    if (btnMenuFlag) {
-        menuMobileBtnIcon.className = "navbar__mobileBtn__icon fa-solid fa-xmark"
-        btnMenuFlag = false
+function generateSizesAttributeElement(xxLarg, xLarg, larg, medium, small, other = "calc(100vw - 20px)") {
+    return `(min-width: 1400px) ${xxLarg}px, (min-width: 1200px) ${xLarg}px, (min-width: 992px) ${larg}px, (min-width: 768px) ${medium}px, (min-width: 576px) ${small}px, ${other}`
+}
+
+// This function places the values of the meta tags of the site
+
+function setMetaTagForSeo() {
+    keywordsMetaTagElement.setAttribute("content", dataBase.Information.keyWords)
+    copyrightMetaTagElement.setAttribute("content", dataBase.Information.owner)
+    ownerMetaTagElement.setAttribute("content", dataBase.Information.owner)
+    descriptionMetaTagElement.setAttribute("content", dataBase.Information.slogan)
+    authorMetaTagElement.setAttribute("content", `${dataBase.Information.owner}, ${dataBase.Information.email}, ${dataBase.Information.sms}`)
+}
+
+// This function creates all header information components
+
+function setHeaderInformation() {
+    pageTitleElement.innerHTML = dataBase.Information.owner
+    navigationLogoElement.insertAdjacentHTML("afterbegin", dataBase.Information.logo.split(".")[0])
+    navigationLogoSuffixElement.innerHTML = "." + dataBase.Information.logo.split(".")[1]
+}
+
+// This is function creates menu and its components
+
+function setHeaderMenu() {
+    menu.forEach(generateMenuItem);
+    [...menuContainerElement.children][0].classList.add("menu__link--active")
+    mobileMenuButtonElement.addEventListener("click", mobileMenuButtonClicked)
+    coverElement.addEventListener("click", hideMobileMenu)
+}
+
+// This is function creates menu item elements
+
+function generateMenuItem(menuItem) {
+    const newLinkElem = $.createElement("a")
+    newLinkElem.className = "menu__link"
+    newLinkElem.dataset.sectionId = menuItem.href;
+
+    const newLiElem = $.createElement("li")
+    newLiElem.className = "menu__item"
+    newLiElem.innerHTML = menuItem.name
+
+    const newIconElem = $.createElement("i")
+    newIconElem.className = `menu__icon ${menuItem.class}`
+
+    newLinkElem.append(newLiElem, newIconElem)
+
+    newLinkElem.addEventListener("click", function () {
+        removeActiveClassName("menu__link--active")
+        newLinkElem.classList.add("menu__link--active")
+        scrollToSection(newLinkElem.dataset.sectionId)
+        if (!menuButtonFlag) {
+            hideMobileMenu()
+        }
+    })
+
+    menuContainerElement.append(newLinkElem)
+}
+
+// This is function changes mobile menu state of view
+
+function mobileMenuButtonClicked() {
+    if (menuButtonFlag) {
+        showMobileMenu()
     }
     else {
-        menuMobileBtnIcon.className = "navbar__mobileBtn__icon fa-solid fa-bars"
-        btnMenuFlag = true
+        hideMobileMenu()
     }
 }
 
-function hideLoadingElem() {
-    loadingElem.classList.add("dis-none")
+// This is function adds site colors to the site
+
+function setColorSite() {
+    dataBase.color.forEach(function (object) {
+        setPropertyStyleElement(object.name, object.vlaue)
+    })
 }
 
-function scrollBarHandler() {
+// This is function analyzes the theme of the site
+
+function initializeThemeMode() {
+    if (themeModeSetting) {
+        setThemeMode(themeModeSetting)
+    }
+    else {
+        const darkSystemTheme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+        const lightSystemTheme = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches
+        if (darkSystemTheme) {
+            setThemeMode("dark")
+        }
+        else if (lightSystemTheme) {
+            setThemeMode("light")
+        }
+    }
+    themeButtonElement.addEventListener("click", function () {
+        setThemeMode(currentThemeFlag)
+    })
+}
+
+// This is function sets the theme mode of the site
+
+function setThemeMode(mode) {
+    document.documentElement.className = mode
+    toggleThemeMode(mode)
+}
+
+// This is function changes theme mode
+
+function toggleThemeMode(mode) {
+    switch (mode) {
+        case "dark":
+            themeButtonIconElement.className = "navigation__theme-icon fa-solid fa-lightbulb"
+            currentThemeFlag = "light"
+            break;
+        case "light":
+            themeButtonIconElement.className = "navigation__theme-icon fa-solid fa-moon"
+            currentThemeFlag = "dark"
+            break;
+    }
+    localStorage.setItem("theme", mode)
+}
+
+// This is function updates scroll bar
+
+function updateScrollBar() {
     const fullScrollHeight = $.body.offsetHeight - window.innerHeight
     const scrollNow = window.scrollY
     let percentScroll = (scrollNow / fullScrollHeight * 100).toFixed(0)
     if (percentScroll === Infinity) {
         percentScroll = 0
     }
-    scrollElem.style.width = percentScroll + "%"
+    scrollElement.style.width = percentScroll + "%"
 }
 
-function activeClassMenuItemScrolling() {
-    const activeElemDataId = `#${[...allSection].findLast(findLastSectionId).id}`;
-    if (cloneElemId != activeElemDataId) {
-        cloneElemId = activeElemDataId;
-        [...menuContainer.children].forEach(function (menuItem) {
-            if (menuItem.dataset.sectionId === activeElemDataId) {
-                removeActiveClass("menu__link--active")
-                menuItem.classList.add("menu__link--active")
-            }
-        });
+// This is function changes the value of variable and components site
+
+function changeValueInResize() {
+    if (window.innerWidth > 767 && mobileMenuButtonElement.className == "navigation__mobile-icon fa-solid fa-xmark") {
+        hideMobileMenu()
     }
+    skillsElementOffsetWidth = [...skillsContainerElement.children][0].offsetWidth
 }
 
-function findLastSectionId(section) {
-    let offsetSectionElem;
-    if (section.offsetHeight > window.innerHeight - navbarElem.offsetHeight) {
-        offsetSectionElem = section.offsetTop - navbarElem.offsetHeight
-    }
-    else {
-        offsetSectionElem = section.offsetTop + section.offsetHeight - window.innerHeight - 5
-    }
-    return offsetSectionElem < window.scrollY
-}
-function effectTypeSkill() {
-    skillsList.forEach(aboutCaptionGenerator);
+// This is function hides loading element
+
+function hideLoadingElement() {
+    loadingElement.classList.add("dis-none")
 }
 
-function aboutCaptionGenerator(skill) {
-    countLengthSkillName = skill.name.length + workHabitsLength + 1
-    aboutCaptionElem.style.setProperty("--time", `${timeEffectTypeCaption}ms`)
-    if (skill.id === 1) {
-        aboutCaptionElem.style.setProperty("--steps", countLengthSkillName)
-        aboutCaptionElem.lastElementChild.innerHTML = skill.name + " " + workHabits;
-    }
-    else {
+// This is function creates "about" section
+
+function displayAbout() {
+    displayAboutMe()
+    displayAboutPicture()
+    displayAboutSkills()
+    displayAboutSocial()
+}
+
+// This is function creates "about me" and its components in the "about" section
+
+function displayAboutMe() {
+    aboutTitleElement.insertAdjacentHTML("beforeend", dataBase.Information.owner);
+    aboutSloganElement.innerHTML = dataBase.Information.slogan;
+    [...upperSectionButtonsElement.children].forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            scrollToSection(btn.dataset.sectionId)
+        })
+    })
+}
+
+// This is function creates "about picture" and its components in the "about" section
+
+function displayAboutPicture() {
+    aboutPictureElement.setAttribute("src", dataBase.Information.pictureSrc)
+    const imageSrcset = generateSrcsetAttributeElement(dataBase.Information.pictureSrcset)
+    const imageSizes = generateSizesAttributeElement(416, 345, 465, 555, 670, "calc((100vw - 20px) / 100 * 80)")
+    aboutPictureElement.setAttribute("srcset", imageSrcset)
+    aboutPictureElement.setAttribute("sizes", imageSizes)
+    aboutPictureElement.setAttribute("loading", "lazy")
+    aboutPictureElement.setAttribute("alt", dataBase.Information.owner)
+}
+
+// This is function creates "about skills" and its components in the "about" section
+
+function displayAboutSkills() {
+    applySkillsEffect();
+    setInterval(applySkillsEffect, skillsCount * captionEffectDuration);
+}
+
+// This function creates "about skills" and an effect on "about skills"
+
+function applySkillsEffect() {
+    dataBase.skills.forEach(function (skill) {
+        const workHabits = aboutCaptionElement.dataset.workHabits;
+        const workHabitsLength = workHabits.length;
+        const countLengthSkillName = skill.name.length + workHabitsLength + 1
+        const coefficientTime = skill.id - 1
+
+        setPropertyStyleElement("--time", `${captionEffectDuration}ms`, aboutCaptionElement)
+        setPropertyStyleElement("--steps", countLengthSkillName, aboutCaptionElement)
+
+        if (skill.id === 1) {
+            aboutSkillsElement.innerHTML = `${skill.name} ${workHabits}`;
+        }
+        else {
+            setTimeout(function () {
+                aboutSkillsElement.innerHTML = `${skill.name} ${workHabits}`;
+            }, coefficientTime * captionEffectDuration);
+        }
+    });
+}
+
+// This is function creates "about social" and its components in the "about" section
+
+function displayAboutSocial() {
+    dataBase.social.forEach(generateSocialItem);
+    setInterval(animateSocialTranslation, socialTranslationDuration);
+}
+
+// This is function generates social item
+
+function generateSocialItem(socialItem) {
+    socialWrapperElement.insertAdjacentHTML("beforeend",
+    `<div class="social">
+        <img class= "social__icon" src = "${socialItem.src}" alt = "${socialItem.name}" loading="lazy">
+        <p class="social__text">${socialItem.name}</p>
+        <a class="social__link" href="${socialItem.href}">
+            <i class="fa-solid fa-arrow-up-right-from-square social__flash"></i>
+        </a>
+    </div>`);
+}
+
+// This is function creates an animate on "about social"
+
+function animateSocialTranslation() {
+    const speedTranslateSocialElem = +aboutSocialElement.dataset.speed
+    const socialElemOffsetHeight = +aboutSocialElement.offsetHeight
+    const countSocialElem = dataBase.social.length
+    socialTranslationCount++
+
+    setPropertyStyleElement("--time", `${speedTranslateSocialElem}ms`, socialWrapperElement)
+    setPropertyStyleElement("--height", `${socialElemOffsetHeight}px`, socialWrapperElement)
+    setPropertyStyleElement("--i", socialTranslationCount, socialWrapperElement)
+
+    if (countSocialElem === socialTranslationCount) {
+        [...socialWrapperElement.children].forEach(function (elem) {
+            createdCloneElement(elem, socialWrapperElement)
+        })
         setTimeout(function () {
-            aboutCaptionElem.style.setProperty("--steps", countLengthSkillName)
-            aboutCaptionElem.lastElementChild.innerHTML = skill.name + " " + workHabits;
-        }, (skill.id - 1) * timeEffectTypeCaption);
+            setPropertyStyleElement("--time", "0ms", socialWrapperElement)
+            setPropertyStyleElement("--i", 0, socialWrapperElement)
+
+            socialTranslationCount = 0;
+            [...socialWrapperElement.children].map(removeCloneElement)
+        }, speedTranslateSocialElem);
+
     }
 }
 
+// This is function creates "skills" and its conponents
 
-function displayProjectList(array, container, rowsCount, countPage, currentPage) {
+function displaySkills() {
+    dataBase.skills.forEach(generateSkillsItem);
+    skillsElementOffsetWidth = [...skillsContainerElement.children][0].offsetWidth
+    setInterval(animateSkillsTranslation, skillsTranslationDuration);
+}
+
+// This is function generates skills item in the "skills" section
+
+function generateSkillsItem(skill) {
+    skillsContainerElement.insertAdjacentHTML("beforeend",
+    `<div class="col-12 col-lg-6 col-xxl-4 flex-center">
+        <div class="skills__item">
+            <img src="${skill.src}" alt="Html" class="skills__picture" loading="lazy">
+            <div class="skills__content">
+                <H3 class="skills__title">${skill.name}</H3>
+                <p class="skills__caption">${skill.caption}</p>
+            </div>
+        </div>
+    </div>`);
+}
+
+// This is function creates an animate on skills item elements
+
+function animateSkillsTranslation() {
+    const speedTranslateSkillsElem = +skillsWrapperElement.dataset.speed
+    const skillsWrapperElemOffsetWidth = skillsWrapperElement.offsetWidth
+    skillsTranslationCount++
+
+    setPropertyStyleElement("--time", `${speedTranslateSkillsElem}ms`, skillsContainerElement)
+    setPropertyStyleElement("--width", `${skillsElementOffsetWidth}px`, skillsContainerElement)
+    setPropertyStyleElement("--i", skillsTranslationCount, skillsContainerElement)
+
+    if (skillsCount + 1 - Math.round(skillsWrapperElemOffsetWidth / skillsElementOffsetWidth) === skillsTranslationCount) {
+        [...skillsContainerElement.children].forEach(function (elem) {
+            createdCloneElement(elem, skillsContainerElement)
+        })
+    }
+    if (skillsTranslationCount === skillsCount) {
+        setTimeout(function () {
+            setPropertyStyleElement("--time", "0ms", skillsContainerElement)
+            setPropertyStyleElement("--i", 0, skillsContainerElement)
+
+            skillsTranslationCount = 0;
+            [...skillsContainerElement.children].map(removeCloneElement)
+        }, speedTranslateSkillsElem);
+    }
+}
+
+// This is function creates "project" an its components
+
+function displayProject() {
+    displayProjectListItem(dataBase.project, projectContainerElement, projectElementCount, ProjectPageCount, currentProjectPage)
+    if (projectCount > projectElementCount) {
+        generateProjectPagination(dataBase.project, projectPagesElement, projectElementCount)
+    }
+}
+
+// This is fucntion determines the position of the domain required by the projects
+
+function displayProjectListItem(array, container, rowsCount, countPage, currentPage) {
     if (currentPage <= countPage) {
         container.innerHTML = ""
-        const paginatedProject = array.slice(rowsCount * currentPage - rowsCount, rowsCount * currentPage)
-        paginatedProject.forEach(projectItemGenerator)
+        const paginationStart = rowsCount * currentPage - rowsCount
+        const paginationEnd = rowsCount * currentPage
+        const paginatedProject = array.slice(paginationStart, paginationEnd)
+        paginatedProject.forEach(generateProjectItem)
     }
 }
 
-function projectPaginationGenerator(array, container, rowsCount) {
+// This is function generates project item elements in the "project" section
+
+function generateProjectItem(project) {
+    const imageSrcset = generateSrcsetAttributeElement(project.srcset)
+    const imageSizes = generateSizesAttributeElement(403.32, 326.67, 226.67, 305, 215)
+    projectContainerElement.insertAdjacentHTML("beforeend",
+    `<div class="col-12 col-sm-6 col-lg-4">
+        <div class="project__item">
+            <img
+            class="project__img"
+            src="${project.src}"
+            srcset="${imageSrcset}"
+            sizes="${imageSizes}"
+            loading="lazy"
+            alt="${project.name}">
+            <div class="project__content">
+                <H4 class="project__content__title">${project.name}</H4>
+                <p class="project__content__caption">${project.caption}</p>
+                <a href="${project.href}" class="button button--show-project">
+                    <i class="button__icon fas fa-arrow-circle-right"></i>
+                    <p class="button__title">Online Preview</p>
+                </a>
+            </div>
+        </div>
+    </div>`)
+}
+
+// This is function generates project pagination button in the "project" section
+
+function generateProjectPagination(array, container, rowsCount) {
     let countPages = Math.ceil(array.length / rowsCount)
-    if (countPages > countProjectPagesElem) {
-        countPages = countProjectPagesElem
+    if (countPages > ProjectPageCount) {
+        countPages = ProjectPageCount
     }
     container.innerHTML = ""
-    const prevPageButton = buttonPageNextPrevGenerator("prev")
+    const prevPageButton = generateSubsPrevButton("prev")
     container.append(prevPageButton)
     for (let i = 1; i <= countPages; i++) {
-        paginationButtonGenerator(i, array, container)
+        generatePaginationButton(i, array, container)
     }
-    const nextPageButton = buttonPageNextPrevGenerator("next")
-    container.append(nextPageButton)
+    const subsPageButton = generateSubsPrevButton("subs")
+    container.append(subsPageButton)
 }
 
-function paginationButtonGenerator(page, array, container) {
-    const button = document.createElement('button')
-    button.innerHTML = page
-    button.classList.add("project__btn")
-    if (page === currentPageProjectElem) {
-        button.classList.add('project__btn--active')
-    }
-    button.addEventListener('click', function () {
-        currentPageProjectElem = page
-        displayProjectList(array, projectContainer, countProjectElementElem, countProjectPagesElem, currentPageProjectElem)
-        removeActiveClass("project__btn--active")
-        button.classList.add("project__btn--active")
-    })
-    container.appendChild(button)
-}
+// This is function generates subsequent and previous button
 
-function buttonPageNextPrevGenerator(type) {
+function generateSubsPrevButton(type) {
     const button = document.createElement("button")
-    button.classList.add("project__btn")
-    if (type === "next") {
-        button.classList.add("project__btn--next")
-        button.innerHTML = '<i class="fas fa-arrow-circle-right"></i>'
+    button.classList.add("project__button")
+    switch (type) {
+        case "subs":        
+            button.classList.add("project__button--subs")
+            button.innerHTML = '<i class="fas fa-arrow-circle-right"></i>'
+            break;
+        case "prev":
+            button.classList.add("project__button--prev")
+            button.innerHTML = '<i class="fas fa-arrow-circle-left"></i>'
+            break;
     }
-    else if (type === "prev") {
-        button.classList.add("project__btn--prev")
-        button.innerHTML = '<i class="fas fa-arrow-circle-left"></i>'
-    }
-    button.addEventListener("click", function (event) {
-        if (type === "next" && currentPageProjectElem !== countProjectPagesElem && currentPageProjectElem !== Math.ceil(projectList.length / countProjectElementElem)) {
-            displayProjectList(projectList, projectContainer, countProjectElementElem, countProjectPagesElem, ++currentPageProjectElem)
+    button.addEventListener("click", function () {
+        if (type === "subs" && currentProjectPage !== ProjectPageCount && currentProjectPage !== Math.ceil(projectCount / projectElementCount)) {
+            displayProjectListItem(dataBase.project, projectContainerElement, projectElementCount, ProjectPageCount, ++currentProjectPage)
         }
-        else if (type === "prev" && currentPageProjectElem !== 1) {
-            displayProjectList(projectList, projectContainer, countProjectElementElem, countProjectPagesElem, --currentPageProjectElem)
+        else if (type === "prev" && currentProjectPage !== 1) {
+            displayProjectListItem(dataBase.project, projectContainerElement, projectElementCount, ProjectPageCount, --currentProjectPage)
         }
-        projectPaginationGenerator(projectList, projectPagesElem, countProjectElementElem)
+        generateProjectPagination(dataBase.project, projectPagesElement, projectElementCount)
         document.querySelector(`.${button.className.split(" ")[1]}`).focus();
     })
     return button
 }
 
-function footerSocialElemGenerator(socialItem) {
-    footerSocialElem.insertAdjacentHTML("beforeend", '<a href="' + socialItem.href + '" class="social__item"><img class= "social__img" src = "' + socialItem.src + '" alt = "' + socialItem.name + '"></a>');
-}
+// This is function generates numeric project pagination button
 
-function checkThemeMode(mode) {
-    if (mode === "dark") {
-        document.documentElement.className = mode
-        themeBtnGenerator(mode)
+function generatePaginationButton(page, array, container) {
+    const button = document.createElement('button')
+    button.innerHTML = page
+    button.classList.add("project__button")
+    if (page === currentProjectPage) {
+        button.classList.add('project__button--active')
     }
-    else if (mode === "light") {
-        document.documentElement.className = mode
-        themeBtnGenerator(mode)
-    }
-}
-
-function themeBtnGenerator(mode) {
-    let themeFlag;
-    if (mode === "dark") {
-        themeBtnIcon.className = "navbar__themeBtn__icon fa-solid fa-lightbulb"
-        themeFlag = "light"
-    }
-    else if (mode === "light") {
-        themeBtnIcon.className = "navbar__themeBtn__icon fa-solid fa-moon"
-        themeFlag = "dark"
-    }
-    themeBtn.addEventListener("click", function () {
-        checkThemeMode(themeFlag)
+    button.addEventListener('click', function () {
+        currentProjectPage = page
+        displayProjectListItem(array, projectContainerElement, projectElementCount, ProjectPageCount, currentProjectPage)
+        removeActiveClassName("project__button--active")
+        button.classList.add("project__button--active")
     })
-    localStorage.setItem("theme", mode)
+    container.appendChild(button)
 }
 
-function createElementWithAdJacentHtml(array, container, position, html) {
-    array.forEach(function (item) {
-        container.insertAdjacentHTML(position, html)
+// This is function creates "footer" and its components
+
+function displayFooter() {
+    footerTitleElement.innerHTML = dataBase.Information.title
+    footerCaptionElement.innerHTML = dataBase.Information.caption
+    footerEmailLinkElement.href = `mailto:${dataBase.Information.email}`
+    footerEmailTextElement.innerHTML = dataBase.Information.email
+    footerSmsLinkElement.href = `sms:${dataBase.Information.sms}`
+    footerSmsTextElement.innerHTML = dataBase.Information.sms
+}
+
+// This is function changes the menu item when scrolling to the user
+
+function toggleActiveMenuItemOnScroll() {
+    const activeElemData = [...sectionsElement].findLast(function (section) {
+        let offsetSectionElem;
+        if (section.offsetHeight > window.innerHeight - navigationElementOffsetHeight) {
+            offsetSectionElem = section.offsetTop - navigationElementOffsetHeight
+        }
+        else {
+            offsetSectionElem = section.offsetTop + section.offsetHeight - window.innerHeight - 5
+        }
+        return offsetSectionElem < window.scrollY
     })
+
+    const activeElemDataId = `#${activeElemData.id}`;
+
+    if (currentSectionId != activeElemDataId) {
+        currentSectionId = activeElemDataId;
+        [...menuContainerElement.children].forEach(function (menuItem) {
+            if (menuItem.dataset.sectionId === activeElemDataId) {
+                removeActiveClassName("menu__link--active")
+                menuItem.classList.add("menu__link--active")
+            }
+        });
+    }
 }

@@ -45,13 +45,15 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
 .project__content__caption {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     overflow: hidden;
 }
-.projectPages {
+
+.projectPagination {
     width: 100%;
     height: max-content;
     display: flex;
@@ -60,7 +62,8 @@
     align-items: center;
     gap: 1rem;
 }
-.project__btn {
+
+.project__button {
     width: 4.3rem;
     height: 4.3rem;
     display: flex;
@@ -72,27 +75,31 @@
     border-radius: 0.5rem;
     cursor: pointer;
 }
-.project__btn--next,
-.project__btn--prev {
-    background-color: var(--projectPageNextPrev-bg-color);
+
+.project__button--subs,
+.project__button--prev {
+    background-color: var(--projectPageSubsPrev-bg-color);
 }
-.project__btn--next i,
-.project__btn--prev i {
+
+.project__button--subs i,
+.project__button--prev i {
     color: var(--text-color);
     font-size: 1.9rem;
 }
-.project__btn:hover,
-.project__btn--active,
-.project__btn--next:focus,
-.project__btn--prev:focus,
-.project__btn--next:hover,
-.project__btn--prev:hover {
+
+.project__button:hover,
+.project__button--active {
     background-color: var(--main-color);
     color: white;
 }
-.project__btn--next:focus i,
-.project__btn--prev:focus i,
-.project__btn--next:hover i,
-.project__btn--prev:hover i {
+
+.project__button--subs:where(:hover, :focus),
+.project__button--prev:where(:hover, :focus) {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.project__button--subs:where(:hover, :focus) i,
+.project__button--prev:where(:hover, :focus) i {
     color: white;
 }

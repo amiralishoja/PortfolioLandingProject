@@ -5,11 +5,12 @@
 */
 
 @media (max-width: 1400px) {
+    .about {
+        min-height: clamp(750px, 100lvh, 900px);
+        min-height: clamp(750px, 100svh, 900px);
+    }
     .about__title {
         font-size: 5.6rem;
-    }
-    .about__social {
-        top: calc(100% - 4rem)
     }
 
     .project__content__title {
@@ -24,8 +25,16 @@
 */
 
 @media (max-width: 1200px) {
+    .about {
+        min-height: clamp(625px, 100lvh, 750px);
+        min-height: clamp(625px, 100svh, 750px);
+    }
     .about__title {
         font-size: 4.1rem;
+    }
+
+    .about__social{
+        margin-top: calc(var(--padding) * -1.5);
     }
 
     .about__caption {
@@ -44,16 +53,16 @@
 */
 
 @media (max-width: 992px) {
+    .about {
+        min-height: clamp(450px, 100lvh, 600px);
+        min-height: clamp(450px, 100svh, 600px);
+    }
     .about__title {
         font-size: 3.9rem;
     }
 
     .about__caption {
         font-size: 1.8rem;
-    }
-
-    .about__social {
-        top: calc(100% - 2rem)
     }
 }
 
@@ -64,9 +73,12 @@
 */
 
 @media (max-width: 768px) {
+    .about {
+        min-height: clamp(800px, 100lvh, 1000px);
+        min-height: clamp(800px, 100svh, 1000px);
+    }
     .row--about {
         flex-flow: column-reverse nowrap;
-        gap: calc(var(--padding) * 4);
     }
     .about__content {
         gap: 2rem;
@@ -77,7 +89,7 @@
         align-items: center;
     }
 
-    .about__btns {
+    .about__buttons {
         justify-content: center;
     }
 
@@ -114,6 +126,10 @@
 */
 
 @media (max-width: 576px) {
+    .about {
+        min-height: clamp(850px, 100lvh, 1000px);
+        min-height: clamp(850px, 100svh, 1000px);
+    }
     .skills__item {
         width: 100%;
     }
@@ -124,13 +140,12 @@
 }
 
 @media (max-width: 480px) {
+    .about {
+        min-height: clamp(700px, 100lvh, 1000px);
+        min-height: clamp(700px, 100svh, 1000px);
+    }
     .about__title {
         font-size: 3.8rem;
-    }
-
-    .btn--skills,
-    .btn--project {
-        flex-grow: 1;
     }
 
     .project__content__title {

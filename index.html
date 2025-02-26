@@ -4,12 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="language" content="EN">
+    <meta id="keyWordsMetaTag" name="keywords">
+    <meta id="copyRightMetaTag" name="copyright">
+    <meta id="ownerMetaTag" name="owner">
+    <meta id="descriptionMetaTag" name="description">
+    <meta id="authorMetaTag" name="author">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="image/png" sizes="96x96" rel="icon" href="Images/Favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="Images/Favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/Favicon/favicon-16x16.png">
+    <link rel="manifest" href="Images/Favicon/site.webmanifest">
+    <link rel="mask-icon" href="Images/Favicon/safari-pinned-tab.svg" color="#3de09b">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-TileImage" content="Images/Favicon/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="Css/Page/Index.css">
     <script src="https://kit.fontawesome.com/1192cd116f.js" crossorigin="anonymous" defer></script>
-    <script src="Scripts/Base/Dom.js" defer></script>
+    <script src="Scripts/Base/DomLayout.js" defer></script>
+    <script src="Scripts/Page/DomIndex.js" defer></script>
     <script src="Scripts/Base/Data.js" defer></script>
+    <script src="Scripts/Base/Variable.js" defer></script>
     <script src="Scripts/Base/Function.js" defer></script>
     <script src="Scripts/Base/Layout.js" defer></script>
     <script src="Scripts/Page/Index.js" defer></script>
@@ -33,24 +48,24 @@
             <div class="circle-8"><span></span><span></span><span></span></div>
         </div>
     </div>
-    <!-- Navbar -->
-    <nav class="navbar">
+    <!-- Navigation -->
+    <nav class="navigation">
         <div class="container">
             <div class="row">
-                <!-- The Navbar Wrapper Is Inside This Tag -->
+                <!-- The Navigation Wrapper Is Inside This Tag -->
                 <div class="col-12">
-                    <div class="navbar__wrapper">
-                        <!-- Navbar Menu Mobile Button-->
-                        <div class="navbar__mobileBtn">
-                            <i class="navbar__mobileBtn__icon fa-solid fa-bars"></i>
+                    <div class="navigation__wrapper">
+                        <!-- Navigation Menu Mobile Button-->
+                        <div class="navigation__mobile-button">
+                            <i class="navigation__mobile-icon fa-solid fa-bars"></i>
                         </div>
-                        <!-- Navbar Logo -->
-                        <h1 class="navbar__logo"></h1>
-                        <!-- Navbar Menu -->
-                        <ul class="navbar__menu"></ul>
-                        <!-- Navbar Theme Button -->
-                        <div class="navbar__themeBtn">
-                            <i class="navbar__themeBtn__icon fa-solid"></i>
+                        <!-- Navigation Logo -->
+                        <H1 class="navigation__logo"><span class="navigation__logo-suffix"></span></H1>
+                        <!-- Navigation Menu -->
+                        <ul class="navigation__menu"></ul>
+                        <!-- Navigation Theme Button -->
+                        <div class="navigation__theme-button">
+                            <i class="navigation__theme-icon fa-solid"></i>
                         </div>
                     </div>
                 </div>
@@ -65,26 +80,26 @@
                 <div class="col-12 col-md-6">
                     <div class="about__content">
                         <!-- Fist Name And Last Name is Inside This Tag -->
-                        <h2 class="about__title">
+                        <H2 class="about__title">
                             <p>Hi, </p>
                             <p>My Friend</p>
                             <br>
                             <span>I Am </span>
-                        </h2>
+                        </H2>
                         <!-- Skills Are Displayed In This Tag -->
                         <div class="about__caption" data-time="4000" data-work-habits="Developer">
-                            <p>A Programmer Who Loves Front End</p>
-                            <p></p>
+                            <p class="about__slogan"></p>
+                            <p class="about__skills"></p>
                         </div>
                         <!-- Quick Access Buttons Are Placed In This Tag -->
-                        <div class="about__btns">
-                            <a data-section-id="#skills" class="btn btn--skills">
-                                <i class="btn__icon fas fa-arrow-circle-right"></i>
-                                <p class="btn__title">Skills</p>
+                        <div class="about__buttons">
+                            <a data-section-id="#skills" class="button button--skills">
+                                <i class="button__icon fas fa-arrow-circle-right"></i>
+                                <p class="button__title">Skills</p>
                             </a>
-                            <a data-section-id="#project" class="btn btn--project">
-                                <i class="btn__icon fas fa-arrow-circle-right"></i>
-                                <p class="btn__title">Go To Projects</p>
+                            <a data-section-id="#project" class="button button--project">
+                                <i class="button__icon fas fa-arrow-circle-right"></i>
+                                <p class="button__title">Go To Projects</p>
                             </a>
                         </div>
                     </div>
@@ -94,7 +109,7 @@
                     <div class="about__wrapper">
                         <!-- The User's Photo Is Placed Inside This Tag -->
                         <div class="about__picture">
-                            <img src="Images/About/Picture.webp" alt="AmiraliShoja" class="about__img">
+                            <img id="aboutImage" alt="" class="about__img">
                         </div>
                         <!-- The User's Virtual Networks Are Included In This Tag -->
                         <div class="about__social" data-speed="1000" data-time="2500">
@@ -112,9 +127,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="tab">
-                        <span class="tab__mark">{</span>
-                        <h3 class="tab__title">Skills</h3>
-                        <span class="tab__mark">}</span>
+                        <span class="tab__mark">[</span>
+                        <H3 class="tab__title">Skills</H3>
+                        <span class="tab__mark">]</span>
                     </div>
                 </div>
             </div>
@@ -131,28 +146,29 @@
             <div class="row">
                 <div class="col-12">
                     <div class="tab">
-                        <span class="tab__mark">[</span>
-                        <h3 class="tab__title">Project</h3>
-                        <span class="tab__mark">]</span>
+                        <span class="tab__mark">{</span>
+                        <H3 class="tab__title">Project</H3>
+                        <span class="tab__mark">}</span>
                     </div>
                 </div>
             </div>
             <!-- User Examples Are Placed In This Tag -->
             <div class="row" id="rowProject"></div>
-            <div class="projectPages" id="projectPages" data-count-element="5" data-count-page="3" data-current-page="1"></div>
+            <div class="projectPagination" id="rowPagination" data-count-element="3" data-count-page="3"
+                data-current-page="1"></div>
         </div>
     </section>
     <!-- Footer Section -->
     <section class="footer" id="contact">
         <div class="container">
-            <div class="row">
+            <div class="row row--footer">
                 <!-- The Content Of The Footer Is Placed In This Tag -->
                 <div class="col-12 col-lg-6">
                     <div class="footer__content">
                         <!-- The Title Of The Footer Content Is Placed In This Tag -->
-                        <h2 class="footer__content__title"></h2>
+                        <H2 class="footer__title"></H2>
                         <!-- The Description Of The Footer Content Is placed In This Tag -->
-                        <p class="footer__content__caption"></p>
+                        <p class="footer__caption"></p>
                     </div>
                 </div>
                 <!-- The Contact Of The Footer Is Placed In This Tag -->
@@ -160,21 +176,19 @@
                     <div class="footer__contact">
                         <!-- The User's Email Is Placed In This Tag -->
                         <a class="footer__email">
-                            <img src="Images/Icon/Email.png" alt="Email" class="footer__email__icon">
+                            <i class="fa-solid fa-envelope footer__email__icon"></i>
                             <p class="footer__email__txt"></p>
                         </a>
                         <!-- The User's Phone Is Placed In This Tag -->
                         <a class="footer__sms">
-                            <img src="Images/Icon/Sms.png" alt="Sms" class="footer__sms__icon">
+                            <i class="fa-solid fa-message footer__sms__icon"></i>
                             <p class="footer__sms__txt"></p>
                         </a>
-                        <!-- The User's Virtual Networks Are Placed In This Tag -->
-                        <div class="footer__social"></div>
                     </div>
                 </div>
                 <div class="col-12">
                     <!-- The Message Of Thanks And Copy Right Is Placed In This Tag -->
-                    <p class="footer__txt">Thank You For Your Visit</p>
+                    <p class="footer__copy-right">Thank You For Your Visit</p>
                 </div>
             </div>
         </div>

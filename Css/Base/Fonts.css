@@ -6,20 +6,36 @@
 
 @font-face {
     font-family: "JostBlack";
-    src: url(../../Fonts/Jost/Jost-Black.ttf);
+    src: url(../../Fonts/Jost/Jost-Black.woff2),
+        url(../../Fonts/Jost/Jost-Black.woff),
+        url(../../Fonts/Jost/Jost-Black.ttf);
+    font-weight: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: "JostBold";
-    src: url(../../Fonts/Jost/Jost-Bold.ttf);
+    src: url(../../Fonts/Jost/Jost-Bold.woff2),
+        url(../../Fonts/Jost/Jost-Bold.woff),
+        url(../../Fonts/Jost/Jost-Bold.ttf);
+    font-weight: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: "JostSemiBold";
-    src: url(../../Fonts/Jost/Jost-SemiBold.ttf);
+    src: url(../../Fonts/Jost/Jost-SemiBold.woff2),
+        url(../../Fonts/Jost/Jost-SemiBold.woff),
+        url(../../Fonts/Jost/Jost-SemiBold.ttf);
+    font-weight: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: "ComfortaaMedium";
-    src: url(../../Fonts/Comfortaa/Comfortaa-Bold.ttf);
+    src: url(../../Fonts/Comfortaa/Comfortaa-Bold.woff2),
+        url(../../Fonts/Comfortaa/Comfortaa-Bold.woff),
+        url(../../Fonts/Comfortaa/Comfortaa-Bold.ttf);
+    font-weight: normal;
+    font-display: swap;
 }

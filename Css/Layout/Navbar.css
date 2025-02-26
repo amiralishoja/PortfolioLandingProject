@@ -1,5 +1,5 @@
 
-.navbar {
+.navigation {
     position: fixed;
     top: 0;
     right: 0;
@@ -8,7 +8,7 @@
     z-index: 998;
 }
 
-.navbar__wrapper {
+.navigation__wrapper {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -16,7 +16,7 @@
     gap: 2rem;
 }
 
-.navbar__menu {
+.navigation__menu {
     height: 100%;
     display: flex;
     flex-flow: row-reverse nowrap;
@@ -41,8 +41,7 @@
     color: var(--main-color);
 }
 
-.menu__link--active,
-.menu__link--active .menu__item {
+.menu__link--active {
     color: var(--main-color);
 }
 
@@ -55,17 +54,17 @@
     font-size: 2.2rem;
 }
 
-.navbar__logo {
+.navigation__logo {
     font-family: var(--jost-black-font);
     font-size: 3rem;
     color: var(--text-color);
 }
 
-.navbar__logo span {
+.navigation__logo-suffix {
     color: var(--main-color);
 }
 
-.navbar__mobileBtn {
+.navigation__mobile-button {
     display: none;
     padding: 0.4rem 0.8rem;
     width: 4.2rem;
@@ -78,11 +77,11 @@
     cursor: pointer;
 }
 
-.navbar__mobileBtn__icon {
+.navigation__mobile-icon {
     font-size: 3rem;
 }
 
-.navbar__themeBtn {
+.navigation__theme-button {
     padding: 0.4rem 0.8rem;
     width: 4.2rem;
     height: 4.2rem;
@@ -95,14 +94,14 @@
     cursor: pointer;
     transition: var(--transition);
 }
-.navbar__themeBtn__icon {
+.navigation__theme-icon {
     font-size: 3rem;
     transition: var(--transition);
 }
-.navbar__themeBtn:hover {
+.navigation__theme-button:hover {
     --navbarBtn-bg-color: var(--reverse-box-color);
 }
-.navbar__themeBtn:hover
-.navbar__themeBtn__icon {
+.navigation__theme-button:hover
+.navigation__theme-icon {
     color: var(--reverse-text-color);
 }

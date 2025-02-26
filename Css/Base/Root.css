@@ -12,8 +12,6 @@
     --jost-bold-font: "JostBold";
     --jost-semibold-font: "JostSemiBold";
     --transition: 0.2s linear;
-    --main-color: rgba(52, 255, 0, 1);
-    --sub-color: rgba(0, 255, 222, 1);
     --lime-blue-gradient-color: linear-gradient(90deg, var(--main-color) 30%, var(--sub-color) 100%);
     --BLACK: black;
     --WHITE: white;
@@ -33,8 +31,10 @@
     --skillsItem-bg-color: var(--DARKEN-DARK);
     --projectItem-bg-color: var(--DARKEN-DARK);
     --projectPages-bg-color: var(--DARKEN-DARK);
-    --projectPageNextPrev-bg-color: var(--LIGHTEN-DARK);
+    --projectPageSubsPrev-bg-color: var(--LIGHTEN-DARK);
     --footer-bg-color: var(--LIGHTEN-DARK);
+    --footer-icon-bg-color: var(--DARKEN-DARK);
+    --footer-icon-color: var(--DARKEN-LIGHT);
     --text-color: var(--WHITE);
     --reverse-text-color: var(--DARKEN-DARK);
     --reverse-box-color: var(--DARKEN-LIGHT);
@@ -51,8 +51,10 @@
     --skillsItem-bg-color: var(--WHITE);
     --projectItem-bg-color: var(--WHITE);
     --projectPages-bg-color: var(--DARKEN-LIGHT);
-    --projectPageNextPrev-bg-color: var(--WHITE);
+    --projectPageSubsPrev-bg-color: var(--WHITE);
     --footer-bg-color: var(--WHITE);
+    --footer-icon-bg-color: var(--DARKEN-LIGHT);
+    --footer-icon-color: var(--LIGHTEN-DARK);
     --text-color: var(--BLACK);
     --reverse-text-color: var(--WHITE);
     --reverse-box-color: var(--LIGHTEN-DARK);
