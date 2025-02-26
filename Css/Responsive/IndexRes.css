@@ -1,0 +1,139 @@
+/* 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    Responsive 2X Large
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+*/
+
+@media (max-width: 1400px) {
+    .about__title {
+        font-size: 5.6rem;
+    }
+    .about__social {
+        top: calc(100% - 4rem)
+    }
+
+    .project__content__title {
+        font-size: 3.3rem;
+    }
+}
+
+/* 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    Responsive X Large
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+*/
+
+@media (max-width: 1200px) {
+    .about__title {
+        font-size: 4.1rem;
+    }
+
+    .about__caption {
+        font-size: 1.9rem;
+    }
+
+    .project__content__title {
+        font-size: 3rem;
+    }
+}
+
+/* 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    Responsive Large
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+*/
+
+@media (max-width: 992px) {
+    .about__title {
+        font-size: 3.9rem;
+    }
+
+    .about__caption {
+        font-size: 1.8rem;
+    }
+
+    .about__social {
+        top: calc(100% - 2rem)
+    }
+}
+
+/* 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    Responsive Medium
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+*/
+
+@media (max-width: 768px) {
+    .row--about {
+        flex-flow: column-reverse nowrap;
+        gap: calc(var(--padding) * 4);
+    }
+    .about__content {
+        gap: 2rem;
+    }
+
+    .about__caption {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about__btns {
+        justify-content: center;
+    }
+
+    .about__title {
+        font-size: 5.1rem;
+    }
+
+    .about__title,
+    .about__caption {
+        text-align: center;
+    }
+
+    .about__title p {
+        display: inline;
+    }
+
+    .about__title br {
+        display: block;
+    }
+
+    .about__img {
+        width: 80%;
+    }
+
+    .project__content__title {
+        font-size: 2.4rem;
+    }
+}
+
+/* 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    Responsive Small
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+*/
+
+@media (max-width: 576px) {
+    .skills__item {
+        width: 100%;
+    }
+
+    .project__content__title {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about__title {
+        font-size: 3.8rem;
+    }
+
+    .btn--skills,
+    .btn--project {
+        flex-grow: 1;
+    }
+
+    .project__content__title {
+        font-size: 3rem;
+    }
+}

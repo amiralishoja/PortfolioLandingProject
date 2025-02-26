@@ -1,0 +1,59 @@
+/* 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    Root 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+*/
+
+:root {
+    --padding: 1rem;
+    --coefficient-of-coulumns: calc((100% - 11 * var(--padding)) / 12);
+    --comfortaa-bold-font: "ComfortaaMedium";
+    --jost-black-font: "JostBlack";
+    --jost-bold-font: "JostBold";
+    --jost-semibold-font: "JostSemiBold";
+    --transition: 0.2s linear;
+    --main-color: rgba(52, 255, 0, 1);
+    --sub-color: rgba(0, 255, 222, 1);
+    --lime-blue-gradient-color: linear-gradient(90deg, var(--main-color) 30%, var(--sub-color) 100%);
+    --BLACK: black;
+    --WHITE: white;
+    --DARKEN-DARK: #2c2c2c;
+    --LIGHTEN-DARK: #383838;
+    --DARKEN-LIGHT: #f5f5f5;
+}
+
+.dark:root {
+    color-scheme: dark;
+    --body-bg-color: #252525;
+    --navbar-bg-color: var(--LIGHTEN-DARK);
+    --social-bg-color: var(--DARKEN-DARK);
+    --navbarBtn-bg-color: var(--DARKEN-DARK);
+    --menu-bg-color: var(--LIGHTEN-DARK);
+    --menuItem-bg-color: var(--DARKEN-DARK);
+    --skillsItem-bg-color: var(--DARKEN-DARK);
+    --projectItem-bg-color: var(--DARKEN-DARK);
+    --projectPages-bg-color: var(--DARKEN-DARK);
+    --projectPageNextPrev-bg-color: var(--LIGHTEN-DARK);
+    --footer-bg-color: var(--LIGHTEN-DARK);
+    --text-color: var(--WHITE);
+    --reverse-text-color: var(--DARKEN-DARK);
+    --reverse-box-color: var(--DARKEN-LIGHT);
+}
+
+.light:root {
+    color-scheme: light;
+    --body-bg-color: #ececec;
+    --navbar-bg-color: var(--WHITE);
+    --social-bg-color: var(--DARKEN-LIGHT);
+    --navbarBtn-bg-color: var(--DARKEN-LIGHT);
+    --menu-bg-color: var(--WHITE);
+    --menuItem-bg-color: var(--DARKEN-LIGHT);
+    --skillsItem-bg-color: var(--WHITE);
+    --projectItem-bg-color: var(--WHITE);
+    --projectPages-bg-color: var(--DARKEN-LIGHT);
+    --projectPageNextPrev-bg-color: var(--WHITE);
+    --footer-bg-color: var(--WHITE);
+    --text-color: var(--BLACK);
+    --reverse-text-color: var(--WHITE);
+    --reverse-box-color: var(--LIGHTEN-DARK);
+}

@@ -1,0 +1,108 @@
+
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--navbar-bg-color);
+    z-index: 998;
+}
+
+.navbar__wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navbar__menu {
+    height: 100%;
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    gap: 3.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu__link {
+    height: 100%;
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    align-items: start;
+    position: relative;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: color var(--transition);
+}
+
+.menu__link:hover {
+    color: var(--main-color);
+}
+
+.menu__link--active,
+.menu__link--active .menu__item {
+    color: var(--main-color);
+}
+
+.menu__item {
+    height: 100%;
+    font-family: var(--jost-bold-font);
+}
+
+.menu__icon {
+    font-size: 2.2rem;
+}
+
+.navbar__logo {
+    font-family: var(--jost-black-font);
+    font-size: 3rem;
+    color: var(--text-color);
+}
+
+.navbar__logo span {
+    color: var(--main-color);
+}
+
+.navbar__mobileBtn {
+    display: none;
+    padding: 0.4rem 0.8rem;
+    width: 4.2rem;
+    height: 4.2rem;
+    background-color: var(--navbarBtn-bg-color);
+    border-radius: 0.5rem;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.navbar__mobileBtn__icon {
+    font-size: 3rem;
+}
+
+.navbar__themeBtn {
+    padding: 0.4rem 0.8rem;
+    width: 4.2rem;
+    height: 4.2rem;
+    background-color: var(--navbarBtn-bg-color);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.navbar__themeBtn__icon {
+    font-size: 3rem;
+    transition: var(--transition);
+}
+.navbar__themeBtn:hover {
+    --navbarBtn-bg-color: var(--reverse-box-color);
+}
+.navbar__themeBtn:hover
+.navbar__themeBtn__icon {
+    color: var(--reverse-text-color);
+}

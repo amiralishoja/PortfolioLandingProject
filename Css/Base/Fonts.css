@@ -1,0 +1,25 @@
+/* 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    Fonts 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+*/
+
+@font-face {
+    font-family: "JostBlack";
+    src: url(../../Fonts/Jost/Jost-Black.ttf);
+}
+
+@font-face {
+    font-family: "JostBold";
+    src: url(../../Fonts/Jost/Jost-Bold.ttf);
+}
+
+@font-face {
+    font-family: "JostSemiBold";
+    src: url(../../Fonts/Jost/Jost-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: "ComfortaaMedium";
+    src: url(../../Fonts/Comfortaa/Comfortaa-Bold.ttf);
+}

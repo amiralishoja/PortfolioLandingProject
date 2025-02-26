@@ -1,0 +1,17 @@
+.tab {
+    font-size: 5rem;
+    font-family: var(--jost-bold-font);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tab__title {
+
+}
+
+.tab__mark {
+    color: var(--main-color);
+}

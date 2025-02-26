@@ -1,0 +1,98 @@
+/* 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    project Style 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+*/
+
+.project {
+    padding: 2rem 0 3rem 0;
+}
+
+
+.project__item {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--projectItem-bg-color);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+.project__img {
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 75%);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.project__content {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: -1.5rem;
+}
+
+.project__content__title {
+    width: 100%;
+    font-family: var(--jost-semibold-font);
+    font-size: 4.3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.project__content__caption {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+.projectPages {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.project__btn {
+    width: 4.3rem;
+    height: 4.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--projectPages-bg-color);
+    color: var(--text-color);
+    font-family: var(--jost-bold-font);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.project__btn--next,
+.project__btn--prev {
+    background-color: var(--projectPageNextPrev-bg-color);
+}
+.project__btn--next i,
+.project__btn--prev i {
+    color: var(--text-color);
+    font-size: 1.9rem;
+}
+.project__btn:hover,
+.project__btn--active,
+.project__btn--next:focus,
+.project__btn--prev:focus,
+.project__btn--next:hover,
+.project__btn--prev:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+.project__btn--next:focus i,
+.project__btn--prev:focus i,
+.project__btn--next:hover i,
+.project__btn--prev:hover i {
+    color: white;
+}

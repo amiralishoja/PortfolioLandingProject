@@ -1,0 +1,136 @@
+/* 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    Responsive 2X Large
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+*/
+
+@media (max-width: 1400px) {
+    .footer__content__title {
+        font-size: 4rem;
+    }
+}
+
+/* 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    Responsive X Large
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+*/
+
+@media (max-width: 1200px) {
+    .footer__content__title {
+        font-size: 3.3rem;
+    }
+}
+
+/* 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    Responsive Large
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+*/
+
+@media (max-width: 992px) {
+    .navbar__menu {
+        gap: 2.5rem;
+    }
+    .footer__content__title {
+        font-size: 4.7rem;
+    }
+    .footer__contact {
+        flex-flow: row wrap;
+        align-items: start;
+    }
+}
+
+/* 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    Responsive Medium
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+*/
+
+@media (max-width: 768px) {
+    .navbar__wrapper {
+        flex-flow: row-reverse nowrap;
+    }
+    .navbar__menu {
+        display: none;
+        position: absolute;
+        top: calc(100% + var(--padding) * 1.5);
+        right: var(--padding);
+        left: var(--padding);
+        width: max-content;
+        margin: 0 auto;
+        height: max-content;
+        flex-flow: column nowrap;
+        align-items: end;
+        padding: 2rem;
+        gap: 1rem;
+        background-color: var(--menu-bg-color);
+        border-radius: 0.8rem;
+    }
+
+    .menu__link {
+        padding: 0.8rem 1.6rem;
+        width: 100%;
+        justify-content: end;
+        align-items: center;
+        border-radius: 0.5rem;
+        background-color: var(--menuItem-bg-color);
+    }
+
+    .menu__link--active {
+        box-shadow: 0 0 0 0.2rem inset var(--main-color);
+    }
+
+    .menu__icon {
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+
+    .navbar__mobileBtn {
+        display: flex;
+    }
+
+    .mobileBtn__icon {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .cover {
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 996;
+    }
+}
+
+/* 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    Responsive Small
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+*/
+
+@media (max-width: 576px) {
+    *,
+    *::before,
+    *::after {
+        cursor: default;
+    }
+
+    .footer__content__title {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer__content__title {
+        font-size: 3rem;
+    }
+
+    .footer__social {
+        justify-content: space-between;
+    }
+}

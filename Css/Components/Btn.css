@@ -1,0 +1,53 @@
+/* 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    Btn Components 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+*/
+
+.btn {
+    background-image: var(--btn-bg-gradient-color, var(--lime-blue-gradient-color));
+    border-radius: 0.8rem;
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: padding var(--transition);
+}
+
+.btn:hover {
+    padding: 1rem 1.5rem 1rem 4.4rem;
+}
+
+.btn:hover .btn__icon {
+    right: calc(100% - 3.4rem);
+}
+
+.btn__icon {
+    transition: right var(--transition);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 102%;
+    margin: auto 0;
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 2.4rem;
+}
+
+.btn__title {}
+
+.btn--skills {
+    --btn-bg-gradient-color: linear-gradient(45deg, #08AEEA 0%, #0cffeb 100%);
+}
+
+.btn--project {
+    --btn-bg-gradient-color: linear-gradient(45deg, #ff8100 0%, #ffd000 100%);
+}
+
+.btn--show-project {
+    width: 100%;
+}

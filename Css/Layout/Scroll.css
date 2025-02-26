@@ -1,0 +1,23 @@
+/* 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    Scroll Component 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+*/
+
+.scroll {
+    transition: width var(--transition);
+    height: 0.4rem;
+    position: fixed;
+    top: 6.2rem;
+    right: 0;
+    left: 0;
+    width: 0;
+    margin: 0 auto;
+    background-color: var(--main-color);
+    z-index: 997;
+    box-shadow: 0 0.1rem 1rem 0.1rem lime;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
