@@ -1,6 +1,6 @@
 /* 
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-    Reset Steyle
+    Reset Style
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 */
 
@@ -8,7 +8,6 @@ html {
     box-sizing: border-box;
     font-size: 62.5%;
     scroll-behavior: smooth;
-    font-family: var(--comfortaa-bold-font), system-ui, arial, sans-serif;
 }
 
 *,
@@ -28,7 +27,7 @@ ol {
 
 a {
     text-decoration: none;
-    color: white;
+    color: var(--text-color);
 }
 
 i,

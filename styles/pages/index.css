@@ -1,25 +1,13 @@
 /* 
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-    Import Base
+    Import Bases
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 */
 
-@import url("../Base/Reset.css");
-@import url("../Base/Fonts.css");
-@import url("../Base/Root.css");
-@import url("../Base/Grid.css");
-
-/* 
-||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-    Import Layout
-||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-*/
-
-@import url("../Layout/KeyFrames.css");
-@import url("../Layout/Loading.css");
-@import url("../Layout/Scroll.css");
-@import url("../Layout/Navbar.css");
-@import url("../Layout/Footer.css");
+@import url("../bases/fonts.css");
+@import url("../bases/root.css");
+@import url("../bases/reset.css");
+@import url("../bases/grid.css");
 
 /* 
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -27,26 +15,39 @@
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 */
 
-@import url("../Components/Btn.css");
-@import url("../Components/TabTitle.css");
+@import url("../components/btns.css");
+@import url("../components/tabTitle.css");
 
 /* 
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-    Import Style
+    Import Layout Style
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 */
 
-@import url("../Style/About.css");
-@import url("../Style/Skills.css");
-@import url("../Style/Project.css");
+@import url("../layout/keyFrames.css");
+@import url("../layout/loading.css");
+@import url("../layout/scroll.css");
+@import url("../layout/navbar.css");
+@import url("../layout/footer.css");
 
 /* 
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-    Import Responsive
+    Import Sections Style
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 */
-@import url("../Responsive/LayoutRes.css");
-@import url("../Responsive/IndexRes.css");
+
+@import url("../sections/about.css");
+@import url("../sections/skills.css");
+@import url("../sections/projects.css");
+
+/* 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    Import Responsives
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+*/
+
+@import url("../responsives/layoutRes.css");
+@import url("../responsives/indexRes.css");
 
 /* 
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -54,4 +55,4 @@
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 */
 
-@import url("../Base/Helper.css");
+@import url("../bases/helper.css");
