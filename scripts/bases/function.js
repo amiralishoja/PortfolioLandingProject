@@ -203,12 +203,6 @@ function changeValueInResize() {
         hideMobileMenu()
     }
     skillsElementOffsetWidth = [...skillsContainerElement.children][0].offsetWidth
-    // if (projectElementCount) {
-    //     displayProject()
-    // }
-    // else if (projectElementMobileCount) {
-    //     displayProject()
-    // }
     const nowProjectElementCount = changeValueTwoConditional(window.innerWidth > 567, projectElementDesktopCount, projectElementMobileCount);
     currentProjectPage = 1;
     if (nowProjectElementCount !== projectElementCount) {
@@ -402,8 +396,6 @@ function displayProject() {
     displayProjectListItem(dataBase.project, projectContainerElement, projectElementCount, ProjectPageCount, currentProjectPage)
     generateProjectPagination(dataBase.project, projectPagesElement, projectElementCount)
 }
-
-
 
 // This is fucntion determines the position of the domain required by the projects
 

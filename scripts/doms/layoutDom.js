@@ -1,3 +1,5 @@
+// In this section, strict mode is used to prevent bugs and clean the code better
+
 "use strict"
 
 // In this section, the vital elements of  the site have been called

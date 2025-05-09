@@ -1,4 +1,3 @@
-// In this section, strict mode is used to prevent bugs and clean the code better
 // In this section, the index page elements of  the site have been called
 
 const sectionsElement = $.querySelectorAll("section")

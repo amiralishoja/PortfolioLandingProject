@@ -1,4 +1,4 @@
-// In this section, the fake database of the site is placed.
+// In this section, the database of the site is placed.
 
 const menu = [
     { id: 1, name: "About Me", href: "#aboutMe", class: "fa-solid fa-bomb" },
@@ -6,8 +6,6 @@ const menu = [
     { id: 3, name: "Project", href: "#project", class: "fa-solid fa-layer-group" },
     { id: 4, name: "Contact", href: "#contact", class: "fa-solid fa-phone-volume" }
 ]
-
-// If you want to change the default information, please replace the text you received from the data generator with the "database" object.
 
 const dataBase = {
     social: [
