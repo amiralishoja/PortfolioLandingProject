@@ -91,7 +91,6 @@ const dataBase = {
             { id: 12, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FAbout%2FPicture.1613w.webp", size: "1613w" },
             { id: 13, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FAbout%2FPicture.1920w.webp", size: "1920w" }
         ],
-        keyWords: "amirali shoja, developer, front-end, java script, freelancer, remote work",
         title: "To infinity and beyond",
         caption: "I have always wanted to have my own website. This thought constantly crossed my mind when I was young, and I was unable to fulfill it until today, until I became a front-end developer and found the power to create a website. I dreamed of launching it",
         email: "amiralishoja.info@gmail.com",

@@ -1,5 +1,3 @@
-// All commands related to SEO meta tags arre executed in this function
-setMetaTagForSeo()
 // All constructors of header information are called in this function
 setHeaderInformation()
 // All header menu constructors are called in this function

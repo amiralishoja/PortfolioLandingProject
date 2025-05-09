@@ -66,16 +66,6 @@ function generateSizesAttributeElement(xxLarg, xLarg, larg, medium, small, other
     return `(min-width: 1400px) ${xxLarg}px, (min-width: 1200px) ${xLarg}px, (min-width: 992px) ${larg}px, (min-width: 768px) ${medium}px, (min-width: 576px) ${small}px, ${other}`
 }
 
-// This function places the values of the meta tags of the site
-
-function setMetaTagForSeo() {
-    keywordsMetaTagElement.setAttribute("content", dataBase.Information.keyWords)
-    copyrightMetaTagElement.setAttribute("content", dataBase.Information.owner)
-    ownerMetaTagElement.setAttribute("content", dataBase.Information.owner)
-    descriptionMetaTagElement.setAttribute("content", dataBase.Information.slogan)
-    authorMetaTagElement.setAttribute("content", `${dataBase.Information.owner}, ${dataBase.Information.email}, ${dataBase.Information.sms}`)
-}
-
 // This function creates all header information components
 
 function setHeaderInformation() {
