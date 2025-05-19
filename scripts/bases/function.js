@@ -70,8 +70,8 @@ function generateSizesAttributeElement(xxLarg, xLarg, larg, medium, small, other
 
 function setHeaderInformation() {
     pageTitleElement.innerHTML = dataBase.Information.owner
-    navigationLogoElement.insertAdjacentHTML("afterbegin", dataBase.Information.logo.split(".")[0])
-    navigationLogoSuffixElement.innerHTML = "." + dataBase.Information.logo.split(".")[1]
+    navigationLogoElement.insertAdjacentHTML("afterbegin", dataBase.Information.logo.split("")[0])
+    navigationLogoSuffixElement.innerHTML = dataBase.Information.logo.split("")[1]
 }
 
 // This is function creates menu and its components

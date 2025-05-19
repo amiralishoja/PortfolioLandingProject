@@ -73,7 +73,7 @@ const dataBase = {
     ],
     Information: {
         owner: "Amirali Shoja",
-        logo: "Shoja.com",
+        logo: ">_",
         slogan: "A Programmer Who Loves Front End",
         pictureSrc: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FAbout%2FPicture.webp",
         pictureSrcset: [
