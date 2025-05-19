@@ -53,3 +53,25 @@
         scale: 0.9
     }
 }
+
+@keyframes box-shadow {
+    25%,
+    100% {
+        text-shadow:
+            0.03px -0.01px 0.01px rgb(255 0 0),
+            0.02px 0.02px 0 rgb(0 255 0),
+            -0.02px 0.02px 0 rgb(0 0 255);
+    }
+}
+
+@keyframes change-background {
+    25% {
+        --text-color: white;
+        --body-bg-color: #252525;
+    }
+
+    100% {
+        --text-color: black;
+        --body-bg-color: #ececec;
+    }
+}

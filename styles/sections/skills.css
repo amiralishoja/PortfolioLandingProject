@@ -17,7 +17,7 @@
     flex-wrap: nowrap;
     transition: all var(--speed) ease;
     transform: translateX(calc((var(--width) * -1 - var(--padding)) * var(--i)));
-    animation: changeScale calc(var(--time) / 2) var(--delay) alternate infinite;
+    animation: change-scale calc(var(--time) / 2) var(--delay) alternate infinite;
 }
 
 .skills__item {
