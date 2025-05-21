@@ -23,7 +23,7 @@
 }
 
 .button:hover .button__icon {
-    right: calc(100% - 3.4rem);
+    right: calc(100% - 3.6rem);
 }
 
 .button__icon {
@@ -31,11 +31,13 @@
     position: absolute;
     top: 0;
     bottom: 0;
+    height: 100%;
     right: 102%;
     margin: auto 0;
-    width: 2.4rem;
-    height: 2.4rem;
-    font-size: 2.4rem;
+    font-size: 2.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button__title {}

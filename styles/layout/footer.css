@@ -41,8 +41,8 @@
 
 .footer__sms__icon,
 .footer__email__icon {
-    padding: 0.8rem;
-    font-size: 2.8rem;
+    padding: 0.4rem 0.9rem;
+    font-size: 2.6rem;
     border-radius: 0.5rem;
     color: var(--footer-icon-color);
     background-color: var(--footer-icon-bg-color);
@@ -57,7 +57,8 @@
 
 .footer__sms:hover .footer__sms__icon,
 .footer__email:hover .footer__email__icon {
-    --social-bg-color: var(--reverse-box-color);
+    --footer-icon-bg-color: var(--reverse-box-color);
+    --footer-icon-color: var(--reverse-text-color)
 }
 
 .footer__copy-right {

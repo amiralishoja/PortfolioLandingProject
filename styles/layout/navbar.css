@@ -35,7 +35,7 @@
     display: flex;
     gap: 0.8rem;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     position: relative;
     cursor: pointer;
     color: var(--text-color);
@@ -56,7 +56,7 @@
 }
 
 .menu__icon {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
 }
 
 .navigation__logo {
@@ -94,6 +94,7 @@
 
 .navigation__mobile-icon {
     font-size: 3rem;
+    transition: var(--transition);
 }
 
 .navigation__theme-button {

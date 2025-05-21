@@ -18,7 +18,7 @@ function scrollToSection(sectionId) {
 function hideMobileMenu() {
     menuContainerElement.classList.remove("dis-flex")
     coverElement.classList.remove("dis-flex")
-    mobileMenuButtonIconElement.className = "navigation__mobile-icon fa-solid fa-bars"
+    mobileMenuButtonIconElement.className = "navigation__mobile-icon ri-menu-3-fill"
     menuButtonFlag = true
 }
 
@@ -27,7 +27,7 @@ function hideMobileMenu() {
 function showMobileMenu() {
     menuContainerElement.classList.add("dis-flex")
     coverElement.classList.add("dis-flex")
-    mobileMenuButtonIconElement.className = "navigation__mobile-icon fa-solid fa-xmark"
+    mobileMenuButtonIconElement.className = "navigation__mobile-icon ri-close-large-fill"
     menuButtonFlag = false
 }
 
@@ -163,11 +163,11 @@ function setThemeMode(mode) {
 function toggleThemeMode(mode) {
     switch (mode) {
         case "dark":
-            themeButtonIconElement.className = "navigation__theme-icon fa-solid fa-lightbulb"
+            themeButtonIconElement.className = "navigation__theme-icon ri-sun-fill"
             currentThemeFlag = "light"
             break;
         case "light":
-            themeButtonIconElement.className = "navigation__theme-icon fa-solid fa-moon"
+            themeButtonIconElement.className = "navigation__theme-icon ri-moon-fill"
             currentThemeFlag = "dark"
             break;
     }
@@ -189,7 +189,7 @@ function updateScrollBar() {
 // This is function changes the value of variable and components site
 
 function changeValueInResize() {
-    if (window.innerWidth > 767 && mobileMenuButtonElement.className == "navigation__mobile-icon fa-solid fa-xmark") {
+    if (window.innerWidth > 767 && mobileMenuButtonElement.className == "navigation__mobile-icon ri-close-large-fill") {
         hideMobileMenu()
     }
     skillsElementOffsetWidth = [...skillsContainerElement.children][0].offsetWidth
@@ -295,7 +295,7 @@ function generateSocialItem(socialItem) {
         <img class= "social__icon" src = "${socialItem.src}" alt = "${socialItem.name}" loading="lazy">
         <p class="social__text">${socialItem.name}</p>
         <a class="social__link" href="${socialItem.href}">
-            <i class="fa-solid fa-arrow-up-right-from-square social__flash"></i>
+            <i class="ri-link social__flash"></i>
         </a>
     </div>`);
 }
@@ -418,7 +418,7 @@ function generateProjectItem(project) {
                 <H4 class="project__content__title">${project.name}</H4>
                 <p class="project__content__caption">${project.caption}</p>
                 <a href="${project.href}" class="button button--fixed button--show-project">
-                    <i class="button__icon fas fa-arrow-circle-right"></i>
+                    <i class="button__icon ri-arrow-right-circle-line"></i>
                     <p class="button__title">Online Preview</p>
                 </a>
             </div>
@@ -456,11 +456,11 @@ function generateSubsPrevButton(type) {
     switch (type) {
         case "subs":        
             button.classList.add("project__button--subs")
-            button.innerHTML = '<i class="fas fa-arrow-circle-right"></i>'
+            button.innerHTML = '<i class="ri-arrow-right-wide-fill"></i>'
             break;
         case "prev":
             button.classList.add("project__button--prev")
-            button.innerHTML = '<i class="fas fa-arrow-circle-left"></i>'
+            button.innerHTML = '<i class="ri-arrow-left-wide-fill"></i>'
             break;
     }
     button.addEventListener("click", function () {
