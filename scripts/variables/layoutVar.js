@@ -74,7 +74,7 @@ const dataBase = {
     Information: {
         owner: "Amirali Shoja",
         logo: ">_",
-        slogan: "A Programmer Who Loves Front End",
+        slogan: "I'm not a hacker, That's all...",
         pictureSrc: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FAbout%2FPicture.webp",
         pictureSrcset: [
             { id: 1, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FAbout%2FPicture.300w.webp", size: "300w" },
@@ -91,8 +91,8 @@ const dataBase = {
             { id: 12, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FAbout%2FPicture.1613w.webp", size: "1613w" },
             { id: 13, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FAbout%2FPicture.1920w.webp", size: "1920w" }
         ],
-        title: "To infinity and beyond",
-        caption: "I have always wanted to have my own website. This thought constantly crossed my mind when I was young, and I was unable to fulfill it until today, until I became a front-end developer and found the power to create a website. I dreamed of launching it",
+        title: "Towards infinity and beyond",
+        caption: "I've always wanted to have my own website. This thought often crossed my mind when I was younger, but I couldn't make it happen, not until I became a front-end developer and discovered the power to build one. I used to dream of launching it.",
         email: "amiralishoja.info@gmail.com",
         sms: "09945792393",
     },

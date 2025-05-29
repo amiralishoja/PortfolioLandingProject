@@ -214,7 +214,9 @@ function changeValueTwoConditional (condition, trueValue, falseValue) {
 // This is function hides loading element
 
 function hideLoadingElement() {
-    loadingElement.classList.add("dis-none")
+    setTimeout(() => {
+        loadingElement.classList.add("dis-none")
+    }, 2500);
 }
 
 // This is function creates "about" section
