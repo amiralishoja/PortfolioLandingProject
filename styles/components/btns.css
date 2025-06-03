@@ -42,12 +42,14 @@
 
 .button__title {}
 
-.button--skills {
-    --button-bg-gradient-color: linear-gradient(45deg, #08AEEA 0%, #0cffeb 100%);
+.button--cv {
+    height: 5rem;
 }
 
-.button--project {
-    --button-bg-gradient-color: linear-gradient(45deg, #ff8100 0%, #ffd000 100%);
+.button--cv .button__title {
+    color: var(--text-color);
+    font-family: var(--jost-semibold-font);
+    font-size: 1.8rem;
 }
 
 .button--show-project {

@@ -5,8 +5,8 @@
 */
 
 .about {
-    min-height: clamp(800px, 100lvh, 900px);
-    min-height: clamp(800px, 100svh, 900px);
+    min-height: clamp(calc(670px + 6.2rem + 2 * var(--padding)), 100lvh, 1000px);
+    min-height: clamp(calc(670px + 6.2rem + 2 * var(--padding)), 100svh, 1000px);
     padding: 6.2rem 0 2rem 0;
     display: flex;
     flex-flow: column nowrap;
@@ -78,22 +78,12 @@
 }
 
 .about__buttons {
-    margin-top: 1rem;
     width: 100%;
     height: max-content;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     gap: 1.5rem;
-}
-
-.about__wrapper {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
 }
 
 .about__picture {
@@ -103,8 +93,9 @@
     justify-content: center;
     align-items: center;
 }
+
 .dark .about__picture {
-    -webkit-filter: drop-shadow(0 0 1.5rem var(--main-color));
+    -webkit-filter: drop-shadow(0 0 1rem var(--main-color));
 }
 
 .about__img {
@@ -119,8 +110,7 @@
 }
 
 .about__social {
-    margin-top: calc(var(--padding) * -4);
-    height: 6rem;
+    height: 5rem;
     overflow: hidden;
 }
 
@@ -131,21 +121,21 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
     gap: 1rem;
 }
 
 .social {
-    width: max-content;
-    height: 6rem;
+    width: 100%;
+    height: 5rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    padding: 1rem 0 1rem 1rem;
+    padding: 0.8rem;
     background-color: var(--social-bg-color);
-    border-radius: 1rem;
+    border-radius: 0.8rem;
 }
 
 .social__icon {
@@ -154,8 +144,8 @@
 
 .social__text {
     color: var(--text-color);
-    font-family: var(--jost-bold-font);
-    font-size: 2rem;
+    font-family: var(--jost-semibold-font);
+    font-size: 1.8rem;
 }
 
 .social__link {
@@ -168,22 +158,5 @@
 .social__flash {
     color: var(--text-color);
     font-size: 2.5rem;
-    padding: 0 1.5rem 0 0.5rem;
     cursor: pointer;
-}
-
-@keyframes cursor {
-    50% {
-        border-color: transparent;
-    }
-}
-
-@keyframes typing {
-    50% {
-        left: 100%;
-    }
-
-    100% {
-        left: 0;
-    }
 }

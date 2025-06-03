@@ -233,11 +233,6 @@ function displayAbout() {
 function displayAboutMe() {
     aboutTitleElement.insertAdjacentHTML("beforeend", dataBase.Information.owner);
     aboutSloganElement.innerHTML = dataBase.Information.slogan;
-    [...upperSectionButtonsElement.children].forEach(function (btn) {
-        btn.addEventListener("click", function () {
-            scrollToSection(btn.dataset.sectionId)
-        })
-    })
 }
 
 // This is function creates "about picture" and its components in the "about" section
