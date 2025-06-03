@@ -74,7 +74,7 @@ const dataBase = {
     Information: {
         owner: "Amirali Shoja",
         logo: ">_",
-        slogan: "I'm not a hacker, That's all...",
+        slogan: "I'm not hacker, That's all...",
         pictureSrc: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FAbout%2FPicture.webp",
         pictureSrcset: [
             { id: 1, src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FAbout%2FPicture.300w.webp", size: "300w" },

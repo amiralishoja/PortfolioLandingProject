@@ -32,12 +32,15 @@
     .navigation__menu {
         gap: 2.5rem;
     }
+
     .footer {
         padding: 3rem 0 calc(var(--padding) + 0.5rem) 0;
     }
+
     .row--footer {
         gap: calc(var(--padding) * 2);
     }
+
     .footer__title {
         font-size: 4.7rem;
     }
@@ -53,6 +56,7 @@
     .navigation__wrapper {
         flex-flow: row-reverse nowrap;
     }
+
     .navigation__menu {
         display: none;
         position: absolute;
@@ -114,11 +118,15 @@
     *,
     *::before,
     *::after {
-        cursor: default;
+        cursor: default !important;
     }
 
     .footer__title {
         font-size: 4rem;
+    }
+
+    :has(.loading.dis-none) body {
+        user-select: none;
     }
 }
 
