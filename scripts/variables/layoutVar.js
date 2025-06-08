@@ -97,7 +97,7 @@ const dataBase = {
         sms: "09945792393",
     },
     color: [
-        { id: 1, name: "--main-color", vlaue: "rgba(52, 255, 0, 1)" },
-        { id: 2, name: "--sub-color", vlaue: "rgba(0, 255, 222, 1)" }
+        { id: 1, name: "--main-color", vlaue: "#ffa000" },
+        { id: 2, name: "--sub-color", vlaue: "#ff4800" }
     ]
 }

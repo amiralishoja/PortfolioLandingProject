@@ -5,7 +5,7 @@
 */
 
 .button {
-    background-image: var(--button-bg-gradient-color, var(--lime-blue-gradient-color));
+    background-image: var(--button-bg-gradient-color, var(--main-linear-gradient-color));
     border-radius: 0.8rem;
     font-size: 1.8rem;
     display: flex;
@@ -40,14 +40,15 @@
     align-items: center;
 }
 
-.button__title {}
+.button__title, .button__icon {
+    color: var(--WHITE);
+}
 
 .button--cv {
     height: 5rem;
 }
 
 .button--cv .button__title {
-    color: var(--text-color);
     font-family: var(--jost-semibold-font);
     font-size: 1.8rem;
 }
