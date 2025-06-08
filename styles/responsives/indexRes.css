@@ -78,11 +78,12 @@
     }
     .about__content {
         gap: 2rem;
+        align-items: center;
     }
 
     .about__caption {
         justify-content: center;
-        align-items: center;
+        align-items: start;
     }
 
     .about__buttons {
@@ -93,8 +94,7 @@
         font-size: 5.1rem;
     }
 
-    .about__title,
-    .about__caption {
+    .about__title {
         text-align: center;
     }
 

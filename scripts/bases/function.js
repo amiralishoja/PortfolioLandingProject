@@ -202,7 +202,7 @@ function changeValueInResize() {
 
 // This function assigns the corect value to the main variable by checking a binary condition
 
-function changeValueTwoConditional (condition, trueValue, falseValue) {
+function changeValueTwoConditional(condition, trueValue, falseValue) {
     if (condition) {
         return trueValue
     }
@@ -259,19 +259,22 @@ function displayAboutSkills() {
 function applySkillsEffect() {
     dataBase.skills.forEach(function (skill) {
         const workHabits = aboutCaptionElement.dataset.workHabits;
-        const workHabitsLength = workHabits.length;
-        const countLengthSkillName = skill.name.length + workHabitsLength + 1
         const coefficientTime = skill.id - 1
 
         setPropertyStyleElement("--time", `${captionEffectDuration}ms`, aboutCaptionElement)
-        setPropertyStyleElement("--steps", countLengthSkillName, aboutCaptionElement)
 
         if (skill.id === 1) {
+            aboutSkillsElement.classList.remove("animated")
             aboutSkillsElement.innerHTML = `${skill.name} ${workHabits}`;
+            void aboutSkillsElement.offsetWidth
+            aboutSkillsElement.classList.add("animated")
         }
         else {
             setTimeout(function () {
+                aboutSkillsElement.classList.remove("animated")
                 aboutSkillsElement.innerHTML = `${skill.name} ${workHabits}`;
+                void aboutSkillsElement.offsetWidth
+                aboutSkillsElement.classList.add("animated")
             }, coefficientTime * captionEffectDuration);
         }
     });
@@ -288,7 +291,7 @@ function displayAboutSocial() {
 
 function generateSocialItem(socialItem) {
     socialWrapperElement.insertAdjacentHTML("beforeend",
-    `<div class="social">
+        `<div class="social">
         <img class= "social__icon" src = "${socialItem.src}" alt = "${socialItem.name}" loading="lazy">
         <p class="social__text">${socialItem.name}</p>
         <a class="social__link" href="${socialItem.href}">
@@ -336,7 +339,7 @@ function displaySkills() {
 
 function generateSkillsItem(skill) {
     skillsContainerElement.insertAdjacentHTML("beforeend",
-    `<div class="col-12 col-lg-6 col-xxl-4 flex-center">
+        `<div class="col-12 col-lg-6 col-xxl-4 flex-center">
         <div class="skills__item">
             <img src="${skill.src}" alt="Html" class="skills__picture" loading="lazy">
             <div class="skills__content">
@@ -402,7 +405,7 @@ function generateProjectItem(project) {
     const imageSrcset = generateSrcsetAttributeElement(project.srcset)
     const imageSizes = generateSizesAttributeElement(403.32, 326.67, 226.67, 305, 215)
     projectContainerElement.insertAdjacentHTML("beforeend",
-    `<div class="col-12 col-sm-6 col-lg-4">
+        `<div class="col-12 col-sm-6 col-lg-4">
         <div class="project__item">
             <img
             class="project__img"
@@ -451,7 +454,7 @@ function generateSubsPrevButton(type) {
     const button = document.createElement("button")
     button.classList.add("project__button")
     switch (type) {
-        case "subs":        
+        case "subs":
             button.classList.add("project__button--subs")
             button.innerHTML = '<i class="ri-arrow-right-wide-fill"></i>'
             break;

@@ -74,7 +74,10 @@
     right: 0;
     border-left: 2px solid var(--text-color);
     background-color: var(--body-bg-color);
-    animation: typing var(--time) steps(var(--steps)) infinite, cursor 0.5s step-end infinite alternate;
+}
+
+.about__skills.animated:last-child::before {
+    animation: typing var(--time);
 }
 
 .about__buttons {
