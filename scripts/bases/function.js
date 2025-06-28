@@ -501,8 +501,6 @@ function displayFooter() {
     footerCaptionElement.innerHTML = dataBase.Information.caption
     footerEmailLinkElement.href = `mailto:${dataBase.Information.email}`
     footerEmailTextElement.innerHTML = dataBase.Information.email
-    footerSmsLinkElement.href = `sms:${dataBase.Information.sms}`
-    footerSmsTextElement.innerHTML = dataBase.Information.sms
 }
 
 // This is function changes the menu item when scrolling to the user

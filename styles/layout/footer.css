@@ -31,7 +31,6 @@
     gap: 1.5rem;
 }
 
-.footer__sms,
 .footer__email {
     width: max-content;
     display: flex;
@@ -39,7 +38,6 @@
     gap: 1rem;
 }
 
-.footer__sms__icon,
 .footer__email__icon {
     padding: 0.4rem 0.9rem;
     font-size: 2.6rem;
@@ -49,13 +47,11 @@
     transition: background-color var(--transition);
 }
 
-.footer__sms__txt,
 .footer__email__txt {
     color: var(--text-color);
     font-size: 2rem;
 }
 
-.footer__sms:hover .footer__sms__icon,
 .footer__email:hover .footer__email__icon {
     --footer-icon-bg-color: var(--reverse-box-color);
     --footer-icon-color: var(--reverse-text-color)
