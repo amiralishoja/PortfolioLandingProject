@@ -40,6 +40,10 @@
     align-items: center;
 }
 
+.button__title {
+    font-family: var(--tomorrow-bold-font);
+}
+
 .button__title, .button__icon {
     color: var(--WHITE);
 }
@@ -49,7 +53,6 @@
 }
 
 .button--cv .button__title {
-    font-family: var(--jost-semibold-font);
     font-size: 1.8rem;
 }
 

@@ -45,7 +45,7 @@ button {
 
 body {
     font-size: 1.6rem;
-    font-family: var(--comfortaa-bold-font);
+    font-family: var(--ubuntu-medium-font);
     line-height: 1.4;
     color: var(--text-color);
     background-color: var(--body-bg-color);

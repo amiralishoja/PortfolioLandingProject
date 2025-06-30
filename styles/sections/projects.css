@@ -39,7 +39,7 @@
 
 .project__content__title {
     width: 100%;
-    font-family: var(--jost-semibold-font);
+    font-family: var(--tomorrow-bold-font);
     font-size: 4.3rem;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -71,7 +71,7 @@
     align-items: center;
     background-color: var(--projectPages-bg-color);
     color: var(--text-color);
-    font-family: var(--jost-bold-font);
+    font-family: var(--tomorrow-extra-bold-font);
     border-radius: 0.5rem;
     cursor: pointer;
 }

@@ -52,7 +52,7 @@
 
 .menu__item {
     height: 100%;
-    font-family: var(--jost-bold-font);
+    font-family: var(--tomorrow-bold-font);
 }
 
 .menu__icon {
@@ -60,7 +60,7 @@
 }
 
 .navigation__logo {
-    font-family: var(--jost-black-font);
+    font-family: var(--tomorrow-black-font);
     font-size: 3rem;
     color: var(--text-color);
 }

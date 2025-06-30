@@ -25,7 +25,7 @@
 
 .about__title {
     font-size: 7rem;
-    font-family: var(--jost-bold-font);
+    font-family: var(--tomorrow-bold-font);
     background: var(--main-linear-gradient-color);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -54,6 +54,7 @@
 }
 
 .about__caption {
+    font-family: var(--ubuntu-bold-font);
     font-size: 2rem;
     display: flex;
     flex-flow: column nowrap;
@@ -147,7 +148,7 @@
 
 .social__text {
     color: var(--text-color);
-    font-family: var(--jost-semibold-font);
+    font-family: var(--tomorrow-bold-font);
     font-size: 1.8rem;
 }
 

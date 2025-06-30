@@ -5,37 +5,36 @@
 */
 
 @font-face {
-    font-family: "JostBlack";
-    src: url(../../fonts/jost/jostBlack.woff2),
-        url(../../fonts/jost/jostBlack.woff),
-        url(../../fonts/jost/jostBlack.ttf);
+    font-family: "TomorrowBlack";
+    src: url(../../fonts/tomorrow/Tomorrow-Black.ttf);
     font-weight: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "JostBold";
-    src: url(../../fonts/jost/jostBold.woff2),
-        url(../../fonts/jost/jostBold.woff),
-        url(../../fonts/jost/jostBold.ttf);
+    font-family: "TomorrowExtraBold";
+    src: url(../../fonts/tomorrow/Tomorrow-ExtraBold.ttf);
     font-weight: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "JostSemiBold";
-    src: url(../../fonts/jost/jostSemiBold.woff2),
-        url(../../fonts/jost/jostSemiBold.woff),
-        url(../../fonts/jost/jostSemiBold.ttf);
+    font-family: "TomorrowBold";
+    src: url(../../fonts/tomorrow/Tomorrow-Bold.ttf);
     font-weight: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "ComfortaaMedium";
-    src: url(../../fonts/comfortaa/comfortaaBold.woff2),
-        url(../../fonts/comfortaa/comfortaaBold.woff),
-        url(../../fonts/comfortaa/comfortaaBold.ttf);
+    font-family: "UbuntuBold";
+    src: url(../../fonts/ubuntu/Ubuntu-Bold.ttf);
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "UbuntuMedium";
+    src: url(../../fonts/ubuntu/Ubuntu-Medium.ttf);
     font-weight: normal;
     font-display: swap;
 }

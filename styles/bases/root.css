@@ -25,11 +25,12 @@
 
     
     /* Reset Values */
-    
-    --comfortaa-bold-font: "ComfortaaMedium";
-    --jost-black-font: "JostBlack";
-    --jost-bold-font: "JostBold";
-    --jost-semibold-font: "JostSemiBold";
+
+    --tomorrow-black-font: "TomorrowBlack";
+    --tomorrow-extra-bold-font: "TomorrowExtraBold";
+    --tomorrow-bold-font: "TomorrowBold";
+    --ubuntu-bold-font: "UbuntuBold";
+    --ubuntu-medium-font: "UbuntuMedium";
     --transition: 0.2s linear;
     --main-linear-gradient-color: linear-gradient(90deg, var(--main-color) 30%, var(--sub-color) 100%);
     --BLACK: black;
