@@ -290,14 +290,11 @@ function displayAboutSocial() {
 // This is function generates social item
 
 function generateSocialItem(socialItem) {
-    socialWrapperElement.insertAdjacentHTML("beforeend",
-        `<div class="social">
-        <img class= "social__icon" src = "${socialItem.src}" alt = "${socialItem.name}" loading="lazy">
-        <p class="social__text">${socialItem.name}</p>
-        <a class="social__link" href="${socialItem.href}">
-            <i class="ri-link social__flash"></i>
-        </a>
-    </div>`);
+    socialWrapperElement.insertAdjacentHTML("beforeend", `
+        <a class="social" href="${socialItem.href}">
+            <i class="${socialItem.iconClass} social__icon"></i>
+            <p class="social__text">${socialItem.name}</p>
+        </a>`);
 }
 
 // This is function creates an animate on "about social"
@@ -341,7 +338,7 @@ function generateSkillsItem(skill) {
     skillsContainerElement.insertAdjacentHTML("beforeend",
         `<div class="col-12 col-lg-6 col-xxl-4 flex-center">
         <div class="skills__item">
-            <img src="${skill.src}" alt="Html" class="skills__picture" loading="lazy">
+        <i class="${skill.iconClass} colored skills__icon"></i>
             <div class="skills__content">
                 <H3 class="skills__title">${skill.name}</H3>
                 <p class="skills__caption">${skill.caption}</p>

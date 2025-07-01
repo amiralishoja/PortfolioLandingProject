@@ -23,6 +23,7 @@
 .skills__item {
     width: 100%;
     height: 18rem;
+    font-size: calc(18rem - 2 * 1.5rem);
     padding: 1.5rem;
     border-radius: 0.8rem;
     background-color: var(--skillsItem-bg-color);
@@ -33,8 +34,8 @@
     gap: 1.5rem;
     transition: var(--transition);
 }
-.skills__picture {
-    height: 100%;
+.skills__icon {
+    font-size: 1em;
 }
 .skills__content {
     padding: 1rem;

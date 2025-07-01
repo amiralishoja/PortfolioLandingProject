@@ -9,15 +9,15 @@ const menu = [
 
 const dataBase = {
     social: [
-        { id: 1, name: "Linkedin", src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FSocial%2FLinkedin.svg", href: "https://www.linkedin.com/in/amiralishoja" },
-        { id: 2, name: "Telegram", src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FSocial%2FTelegram.svg", href: "https://t.me/amirali_shoja" },
-        { id: 3, name: "GitHub", src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FSocial%2FGithub.svg", href: "https://github.com/amiralishoja" }
+        { id: 1, name: "Linkedin", iconClass: "ri-linkedin-box-fill", href: "https://www.linkedin.com/in/amiralishoja" },
+        { id: 2, name: "Telegram", iconClass: "ri-telegram-2-line", href: "https://t.me/amirali_shoja" },
+        { id: 3, name: "GitHub", iconClass: "ri-github-line", href: "https://github.com/amiralishoja" }
     ],
     skills: [
-        { id: 1, name: "Html", src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FSkills%2FHtml.svg", caption: "Elements Attributes Links Pictures Tables Lists Layout Forms Medias ..." },
-        { id: 2, name: "Css", src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FSkills%2FCss.svg", caption: "Selectors Units Fonts Viewports Variables Animations Backgrounds Function Media Query Grid System Flexbox ..." },
-        { id: 3, name: "Sass", src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FSkills%2FSass.svg", caption: "Variables Nestings Import Partials Mixins Include Extend Function Maps Interpolation Conditions Loops ..." },
-        { id: 4, name: "JavaScript", src: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FSkills%2FJavaScript.svg", caption: "Variables Operators Data Types Function Events Arrays & Objects Data Methods Loops Error Hadelling Dom Bom Styles Conditions ..." }
+        { id: 1, name: "Html", iconClass: "devicon-html5-plain", caption: "Elements Attributes Links Pictures Tables Lists Layout Forms Medias ..." },
+        { id: 2, name: "Css", iconClass: "devicon-css3-plain", caption: "Selectors Units Fonts Viewports Variables Animations Backgrounds Function Media Query Grid System Flexbox ..." },
+        { id: 3, name: "Sass", iconClass: "devicon-sass-original", caption: "Variables Nestings Import Partials Mixins Include Extend Function Maps Interpolation Conditions Loops ..." },
+        { id: 4, name: "JavaScript", iconClass: "devicon-javascript-plain", caption: "Variables Operators Data Types Function Events Arrays & Objects Data Methods Loops Error Hadelling Dom Bom Styles Conditions ..." }
     ],
     project: [
         {
