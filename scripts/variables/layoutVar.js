@@ -1,10 +1,10 @@
 // In this section, the database of the site is placed.
 
 const menu = [
-    { id: 1, name: "About Me", href: "#aboutMe", class: "ri-information-2-fill" },
-    { id: 2, name: "Skills", href: "#skills", class: "ri-settings-6-fill" },
-    { id: 3, name: "Project", href: "#project", class: "ri-git-branch-fill" },
-    { id: 4, name: "Contact", href: "#contact", class: "ri-radar-fill" }
+    { id: 1, name: "About Me", href: "#aboutMeSection", class: "ri-information-2-fill" },
+    { id: 2, name: "Skills", href: "#skillsSection", class: "ri-settings-6-fill" },
+    { id: 3, name: "Project", href: "#projectSection", class: "ri-git-branch-fill" },
+    { id: 4, name: "Contact", href: "#footerSection", class: "ri-radar-fill" }
 ]
 
 const dataBase = {
@@ -73,7 +73,7 @@ const dataBase = {
     ],
     Information: {
         owner: "Amirali Shoja",
-        logo: ">_",
+        logo: ">-",
         slogan: "I'm not hacker, That's all...",
         pictureSrc: "https://shoja.s3.ir-thr-at1.arvanstorage.ir/Images%2FAbout%2FPicture.webp",
         pictureSrcset: [

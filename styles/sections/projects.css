@@ -53,7 +53,7 @@
     overflow: hidden;
 }
 
-.projectPagination {
+.project-pagination {
     width: 100%;
     height: max-content;
     display: flex;

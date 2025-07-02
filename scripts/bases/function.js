@@ -222,7 +222,7 @@ function hideLoadingElement() {
 // This is function creates "about" section
 
 function displayAbout() {
-    displayAboutMe()
+    displayaboutMe()
     displayAboutPicture()
     displayAboutSkills()
     displayAboutSocial()
@@ -230,7 +230,7 @@ function displayAbout() {
 
 // This is function creates "about me" and its components in the "about" section
 
-function displayAboutMe() {
+function displayaboutMe() {
     aboutTitleElement.insertAdjacentHTML("beforeend", dataBase.Information.owner);
     aboutSloganElement.innerHTML = dataBase.Information.slogan;
 }
@@ -300,7 +300,7 @@ function generateSocialItem(socialItem) {
 // This is function creates an animate on "about social"
 
 function animateSocialTranslation() {
-    const speedTranslateSocialElem = +aboutSocialElement.dataset.speed
+    const speedTranslateSocialElem = +aboutSocialElement.dataset.animationSpeed
     const socialElemOffsetHeight = +aboutSocialElement.offsetHeight
     const countSocialElem = dataBase.social.length
     socialTranslationCount++
@@ -350,7 +350,7 @@ function generateSkillsItem(skill) {
 // This is function creates an animate on skills item elements
 
 function animateSkillsTranslation() {
-    const speedTranslateSkillsElem = +skillsWrapperElement.dataset.speed
+    const speedTranslateSkillsElem = +skillsWrapperElement.dataset.animationSpeed
     const skillsWrapperElemOffsetWidth = skillsWrapperElement.offsetWidth
     skillsTranslationCount++
 

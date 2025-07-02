@@ -1,10 +1,10 @@
 /* 
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-    Tab Title Component
+    section-header Title Component
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 */
 
-.tab {
+.section-header {
     font-size: 5rem;
     font-family: var(--tomorrow-black-font);
     display: flex;
@@ -14,11 +14,11 @@
     gap: 1rem;
 }
 
-.tab__title {
+.section-header__title {
 
 }
 
-.tab__mark {
+.section-header__mark {
     color: var(--main-color);
     margin-bottom: 1rem;
 }
