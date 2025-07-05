@@ -75,6 +75,7 @@
     }
     .row--about {
         flex-flow: column-reverse nowrap;
+        gap: 0;
     }
     .about__content {
         gap: 2rem;
@@ -92,18 +93,11 @@
 
     .about__title {
         font-size: 5.1rem;
-    }
-
-    .about__title {
         text-align: center;
     }
 
-    .about__title p {
-        display: inline;
-    }
-
-    .about__title br {
-        display: block;
+    .about__title br:nth-child(2) {
+        display: none;
     }
 
     .about__img {

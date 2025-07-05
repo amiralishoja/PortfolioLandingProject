@@ -90,14 +90,14 @@ function generateMenuItem(menuItem) {
     newLinkElem.className = "menu__link"
     newLinkElem.dataset.sectionId = menuItem.href;
 
-    const newLiElem = $.createElement("li")
-    newLiElem.className = "menu__item"
-    newLiElem.innerHTML = menuItem.name
+    const newSpanElem = $.createElement("span")
+    newSpanElem.className = "menu__item"
+    newSpanElem.innerHTML = menuItem.name
 
     const newIconElem = $.createElement("i")
     newIconElem.className = `menu__icon ${menuItem.class}`
 
-    newLinkElem.append(newLiElem, newIconElem)
+    newLinkElem.append(newSpanElem, newIconElem)
 
     newLinkElem.addEventListener("click", function () {
         removeActiveClassName("menu__link--active")

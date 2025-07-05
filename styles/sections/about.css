@@ -26,31 +26,25 @@
 .about__title {
     font-size: 7rem;
     font-family: var(--tomorrow-bold-font);
+    display: inline;
     background: var(--main-linear-gradient-color);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.about__title br {
-    display: none;
-}
-
-.about__title p:nth-child(1) {
-    background: var(--main-color);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.about__title p:nth-child(2) {
-    background: var(--text-color);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.about__title>* {
+    font-size: inherit;
+    background: none;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
 }
 
 .about__title span {
-    background: var(--text-color);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--text-color);
+}
+
+.about__title span:nth-child(1) {
+    color: var(--main-color);
 }
 
 .about__caption {
