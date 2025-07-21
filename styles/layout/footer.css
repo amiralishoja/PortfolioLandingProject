@@ -6,7 +6,7 @@
 
 .footer {
     background-color: var(--footer-bg-color);
-    padding: 3rem 0 0.5rem 0;
+    padding: 1.5rem 0.5rem 0;
 }
 
 .footer__content {
@@ -16,15 +16,21 @@
     justify-content: center;
     gap: 1.5rem;
 }
+
 .footer__title {
     font-size: 5rem;
     font-family: var(--tomorrow-extra-bold-font);
+    background: var(--sub-linear-gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
 .footer__caption {
     font-family: var(--ubuntu-bold-font);
     font-size: 1.7rem;
 }
-.footer__contact  {
+
+.footer__contact {
     width: 100%;
     display: flex;
     flex-flow: column nowrap;

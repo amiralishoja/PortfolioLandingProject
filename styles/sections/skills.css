@@ -5,7 +5,7 @@
 */
 
 .skills {
-    padding: 2rem 0 2rem 0;
+    padding: calc(2 * var(--gap)) 0;
 }
 
 .skills__wrapper {

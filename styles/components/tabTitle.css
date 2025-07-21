@@ -5,20 +5,29 @@
 */
 
 .section-header {
-    font-size: 5rem;
-    font-family: var(--tomorrow-black-font);
     display: flex;
-    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
 }
 
 .section-header__title {
-
+    font-size: 5rem;
+    font-family: var(--tomorrow-black-font);
+    position: relative;
 }
 
-.section-header__mark {
+.section-header__title::before {
+    content: attr(data-start);
+    left: -3rem;
+}
+
+.section-header__title::after {
+    content: attr(data-end);
+    right: -3rem;
+}
+
+.section-header__title::before,
+.section-header__title::after {
+    position: absolute;
     color: var(--main-color);
-    margin-bottom: 1rem;
 }

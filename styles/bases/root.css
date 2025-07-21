@@ -33,6 +33,7 @@
     --ubuntu-medium-font: "UbuntuMedium";
     --transition: 0.2s linear;
     --main-linear-gradient-color: linear-gradient(90deg, var(--main-color) 30%, var(--sub-color) 100%);
+    --sub-linear-gradient-color: linear-gradient(135deg, var(--main-color) 0%, var(--sub-color) 90%);
     --BLACK: black;
     --WHITE: white;
     --DARKEN-DARK: #2c2c2c;
@@ -75,7 +76,7 @@
     --footer-bg-color: var(--WHITE);
     --footer-icon-bg-color: var(--DARKEN-LIGHT);
     --footer-icon-color: var(--LIGHTEN-DARK);
-    --text-color: var(--BLACK);
+    --text-color: var(--LIGHTEN-DARK);
     --reverse-text-color: var(--WHITE);
     --reverse-box-color: var(--LIGHTEN-DARK);
 }

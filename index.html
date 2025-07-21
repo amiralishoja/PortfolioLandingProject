@@ -18,7 +18,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="styles/pages/index.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@latest/fonts/remixicon.min.css" rel="stylesheet" />
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <script src="scripts/doms/layoutDom.js" defer></script>
     <script src="scripts/doms/indexDom.js" defer></script>
@@ -94,9 +94,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-header">
-                        <span class="section-header__mark">[</span>
-                        <h3 class="section-header__title">Skills</h3>
-                        <span class="section-header__mark">]</span>
+                        <h3 class="section-header__title" data-start="[" data-end="]">Skills</h3>
                     </div>
                 </div>
             </div>
@@ -111,15 +109,13 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-header">
-                        <span class="section-header__mark">{</span>
-                        <h3 class="section-header__title">Projects</h3>
-                        <span class="section-header__mark">}</span>
+                        <h3 class="section-header__title" data-start="{" data-end="}">Projects</h3>
                     </div>
                 </div>
             </div>
             <div class="row" id="rowProject"></div>
             <div class="project-pagination" id="rowPagination" data-count-element-desktop="5"
-                data-count-element-mobile="1" data-count-page="3" data-current-page="1"></div>
+                data-count-element-mobile="1" data-count-page="5" data-current-page="1"></div>
         </div>
     </section>
     <!-- Footer Section -->

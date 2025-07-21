@@ -6,8 +6,8 @@
 
 @media (max-width: 1400px) {
     .about {
-        min-height: clamp(calc(555px + 6.2rem + 2 * var(--padding)), 100lvh, 1000px);
-        min-height: clamp(calc(555px + 6.2rem + 2 * var(--padding)), 100svh, 1000px);
+        height: max(calc(555px + 6.2rem + 2 * var(--padding)), 100vh);
+        height: max(calc(555px + 6.2rem + 2 * var(--padding)), 100svh);
     }
     .about__title {
         font-size: 5.6rem;
@@ -26,15 +26,11 @@
 
 @media (max-width: 1200px) {
     .about {
-        min-height: clamp(calc(465px + 6.2rem + 2 * var(--padding)), 100lvh, 1000px);
-        min-height: clamp(calc(465px + 6.2rem + 2 * var(--padding)), 100svh, 1000px);
+        height: max(calc(465px + 6.2rem + 2 * var(--padding)), 100vh);
+        height: max(calc(465px + 6.2rem + 2 * var(--padding)), 100svh);
     }
     .about__title {
         font-size: 4.1rem;
-    }
-
-    .about__caption {
-        font-size: 1.9rem;
     }
 
     .project__content__title {
@@ -50,15 +46,11 @@
 
 @media (max-width: 992px) {
     .about {
-        min-height: clamp(calc(345px + 6.2rem + 2 * var(--padding)), 100lvh, 1000px);
-        min-height: clamp(calc(345px + 6.2rem + 2 * var(--padding)), 100svh, 1000px);
+        height: max(calc(345px + 6.2rem + 2 * var(--padding)), 100vh);
+        height: max(calc(345px + 6.2rem + 2 * var(--padding)), 100svh);
     }
     .about__title {
-        font-size: 3.9rem;
-    }
-
-    .about__caption {
-        font-size: 1.8rem;
+        font-size: 3.8rem;
     }
 }
 
@@ -70,8 +62,8 @@
 
 @media (max-width: 768px) {
     .about {
-        min-height: clamp(calc(772px + 6.2rem + 2 * var(--padding)), 100lvh, 1000px);
-        min-height: clamp(calc(772px + 6.2rem + 2 * var(--padding)), 100svh, 1000px);
+        height: max(calc(772px + 6.2rem + 2 * var(--padding)), 100vh);
+        height: max(calc(772px + 6.2rem + 2 * var(--padding)), 100svh);
     }
     .row--about {
         flex-flow: column-reverse nowrap;
@@ -85,6 +77,7 @@
     .about__caption {
         justify-content: center;
         align-items: start;
+        font-size: 1.9rem;
     }
 
     .about__buttons {
@@ -92,7 +85,7 @@
     }
 
     .about__title {
-        font-size: 5.1rem;
+        font-size: 4.5rem;
         text-align: center;
     }
 
@@ -117,8 +110,8 @@
 
 @media (max-width: 576px) {
     .about {
-        min-height: clamp(calc(722px + 6.2rem + 2 * var(--padding)), 100lvh, 1000px);
-        min-height: clamp(calc(722px + 6.2rem + 2 * var(--padding)), 100svh, 1000px);
+        height: max(calc(722px + 6.2rem + 2 * var(--padding)), 100vh);
+        height: max(calc(722px + 6.2rem + 2 * var(--padding)), 100svh);
     }
     .skills__item {
         width: 100%;
@@ -131,11 +124,11 @@
 
 @media (max-width: 480px) {
     .about {
-        min-height: clamp(calc(580px + 6.2rem + 2 * var(--padding)), 100lvh, 1000px);
-        min-height: clamp(calc(580px + 6.2rem + 2 * var(--padding)), 100svh, 1000px);
+        height: max(calc(580px + 6.2rem + 2 * var(--padding)), 100vh);
+        height: max(calc(580px + 6.2rem + 2 * var(--padding)), 100svh);
     }
     .about__title {
-        font-size: 3.8rem;
+        font-size: 3.6rem;
     }
 
     .project__content__title {

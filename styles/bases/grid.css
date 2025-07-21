@@ -12,7 +12,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    row-gap: calc(4 * var(--gap));
+    row-gap: calc(2 * var(--gap));
     position: relative;
     container-type: inline-size;
     container-name: container;
