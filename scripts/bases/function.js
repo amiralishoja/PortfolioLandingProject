@@ -53,19 +53,6 @@ function setPropertyStyleElement(name, value, element = document.documentElement
     element.style.setProperty(name, value);
 }
 
-// This function makes the addresses of images along with their pixel size
-
-function generateSrcsetAttributeElement(array) {
-    const newArray = array.map(function (picture) {
-        return `${picture.src} ${picture.size}`
-    })
-    return newArray.join(", ")
-}
-
-function generateSizesAttributeElement(xxLarg, xLarg, larg, medium, small, other = "calc(100vw - 20px)") {
-    return `(min-width: 1400px) ${xxLarg}px, (min-width: 1200px) ${xLarg}px, (min-width: 992px) ${larg}px, (min-width: 768px) ${medium}px, (min-width: 576px) ${small}px, ${other}`
-}
-
 // This function creates all header information components
 
 function setHeaderInformation() {
@@ -239,10 +226,6 @@ function displayaboutMe() {
 
 function displayAboutPicture() {
     aboutPictureElement.setAttribute("src", dataBase.Information.pictureSrc)
-    const imageSrcset = generateSrcsetAttributeElement(dataBase.Information.pictureSrcset)
-    const imageSizes = generateSizesAttributeElement(416, 345, 465, 555, 670, "calc((100vw - 20px) / 100 * 80)")
-    aboutPictureElement.setAttribute("srcset", imageSrcset)
-    aboutPictureElement.setAttribute("sizes", imageSizes)
     aboutPictureElement.setAttribute("loading", "lazy")
     aboutPictureElement.setAttribute("alt", dataBase.Information.owner)
 }
@@ -399,16 +382,12 @@ function displayProjectListItem(array, container, rowsCount, countPage, currentP
 // This is function generates project item elements in the "project" section
 
 function generateProjectItem(project) {
-    const imageSrcset = generateSrcsetAttributeElement(project.srcset)
-    const imageSizes = generateSizesAttributeElement(403.32, 326.67, 226.67, 305, 215)
     projectContainerElement.insertAdjacentHTML("beforeend",
         `<div class="col-12 col-sm-6 col-lg-4">
         <div class="project__item">
             <img
             class="project__img"
             src="${project.src}"
-            srcset="${imageSrcset}"
-            sizes="${imageSizes}"
             loading="lazy"
             alt="${project.name}">
             <div class="project__content">
