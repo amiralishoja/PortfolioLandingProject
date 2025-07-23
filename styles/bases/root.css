@@ -49,7 +49,7 @@
     --navbarBtn-bg-color: var(--DARKEN-DARK);
     --menu-bg-color: var(--LIGHTEN-DARK);
     --menuItem-bg-color: var(--DARKEN-DARK);
-    --skillsItem-bg-color: var(--DARKEN-DARK);
+    --skill-item-bg-color: var(--DARKEN-DARK);
     --projectItem-bg-color: var(--DARKEN-DARK);
     --projectPages-bg-color: var(--DARKEN-DARK);
     --projectPageSubsPrev-bg-color: var(--LIGHTEN-DARK);
@@ -70,7 +70,7 @@
     --navbarBtn-bg-color: var(--DARKEN-LIGHT);
     --menu-bg-color: var(--WHITE);
     --menuItem-bg-color: var(--DARKEN-LIGHT);
-    --skillsItem-bg-color: var(--WHITE);
+    --skill-item-bg-color: var(--WHITE);
     --projectItem-bg-color: var(--WHITE);
     --projectPages-bg-color: var(--DARKEN-LIGHT);
     --projectPageSubsPrev-bg-color: var(--WHITE);

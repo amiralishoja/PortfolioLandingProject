@@ -5,11 +5,6 @@
 // In this section, the vital elements of  the site have been called
 
 const $ = document
-const keywordsMetaTagElement = $.getElementById("keyWordsMetaTag")
-const copyrightMetaTagElement = $.getElementById("copyRightMetaTag")
-const ownerMetaTagElement = $.getElementById("ownerMetaTag")
-const descriptionMetaTagElement = $.getElementById("descriptionMetaTag")
-const authorMetaTagElement = $.getElementById("authorMetaTag")
 const pageTitleElement = $.querySelector("title")
 const loadingElement = $.querySelector(".loading")
 const navigationElement = $.querySelector(".header")

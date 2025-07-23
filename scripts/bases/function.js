@@ -18,6 +18,7 @@ function scrollToSection(sectionId) {
 function hideMobileMenu() {
     menuContainerElement.classList.remove("dis-flex")
     coverElement.classList.remove("dis-flex")
+    mobileMenuButtonElement.setAttribute("aria-expanded", "false")
     mobileMenuButtonIconElement.className = "navigation__mobile-icon ri-menu-3-fill"
     menuButtonFlag = true
 }
@@ -27,6 +28,7 @@ function hideMobileMenu() {
 function showMobileMenu() {
     menuContainerElement.classList.add("dis-flex")
     coverElement.classList.add("dis-flex")
+    mobileMenuButtonElement.setAttribute("aria-expanded", "true")
     mobileMenuButtonIconElement.className = "navigation__mobile-icon ri-close-large-fill"
     menuButtonFlag = false
 }
@@ -76,6 +78,8 @@ function generateMenuItem(menuItem) {
     const newLinkElem = $.createElement("a")
     newLinkElem.className = "menu__link"
     newLinkElem.dataset.sectionId = menuItem.href;
+    newLinkElem.setAttribute("role", "button")
+    newLinkElem.setAttribute("aria-label", `Jump to ${menuItem.name} section`)
 
     const newSpanElem = $.createElement("span")
     newSpanElem.className = "menu__item"
@@ -83,6 +87,7 @@ function generateMenuItem(menuItem) {
 
     const newIconElem = $.createElement("i")
     newIconElem.className = `menu__icon ${menuItem.class}`
+    newIconElem.setAttribute("aria-hidden", "true")
 
     newLinkElem.append(newSpanElem, newIconElem)
 
@@ -176,7 +181,7 @@ function updateScrollBar() {
 // This is function changes the value of variable and components site
 
 function changeValueInResize() {
-    if (window.innerWidth > 767 && mobileMenuButtonElement.className == "navigation__mobile-icon ri-close-large-fill") {
+    if (window.innerWidth > 767 && mobileMenuButtonIconElement.className == "navigation__mobile-icon ri-close-large-fill") {
         hideMobileMenu()
     }
     const nowProjectElementCount = changeValueTwoConditional(window.innerWidth > breakPojectPaginationWidth, projectElementDesktopCount, projectElementMobileCount);
@@ -218,6 +223,7 @@ function displayAbout() {
 
 function displayaboutMe() {
     aboutTitleElement.insertAdjacentHTML("beforeend", dataBase.Information.owner);
+    aboutTitleElement.setAttribute("aria-label", `Hey, dear friend I'm ${dataBase.Information.owner}`)
     aboutSloganElement.innerHTML = dataBase.Information.slogan;
 }
 
@@ -226,7 +232,7 @@ function displayaboutMe() {
 function displayAboutPicture() {
     aboutPictureElement.setAttribute("src", dataBase.Information.pictureSrc)
     aboutPictureElement.setAttribute("loading", "lazy")
-    aboutPictureElement.setAttribute("alt", dataBase.Information.owner)
+    aboutPictureElement.setAttribute("alt", `${dataBase.Information.owner}'s animated picture`)
 }
 
 // This is function creates "about skills" and its components in the "about" section
@@ -273,8 +279,8 @@ function displayAboutSocial() {
 
 function generateSocialItem(socialItem) {
     socialWrapperElement.insertAdjacentHTML("beforeend", `
-        <a class="social" href="${socialItem.href}">
-            <i class="${socialItem.iconClass} social__icon"></i>
+        <a class="social" href="${socialItem.href}" role="button" aria-label="See my ${socialItem.name}">
+            <i class="${socialItem.iconClass} social__icon" aria-hidden="true"></i>
             <p class="social__text">${socialItem.name}</p>
         </a>`);
 }
@@ -315,11 +321,12 @@ function displaySkills() {
 // This is function generates skills item in the "skills" section
 
 function generateSkillsItem(skill) {
-    skillsWrapperElement.insertAdjacentHTML("beforeend", `<div class="col-6 col-md-4 col-lg-3 skills__item">
-                    <img class="skills__picture" src="${skill.svgUrl}" alt="${skill.name}" loading="lazy"/>
-                    <label class="skills__percent" for="progress${skill.name}">${skill.percent}%</label>
-                    <progress class="skills__progress" id="progress${skill.name}" value="${skill.percent}" max="100"></progress>
-                </div>`);
+    skillsWrapperElement.insertAdjacentHTML("beforeend", `
+        <div class="col-6 col-md-4 col-lg-3 skills__item" aria-label="I know about ${skill.percent}% about of ${skill.name}">
+            <img class="skills__picture" src="${skill.svgUrl}" alt="${skill.name}'s logo picture" loading="lazy" aria-hidden="true"/>
+            <label class="skills__percent" for="progress${skill.name}" aria-hidden="true">${skill.percent}%</label>
+            <progress class="skills__progress" id="progress${skill.name}" value="${skill.percent}" max="100" aria-hidden="true"></progress>
+        </div>`);
 }
 
 // This is function creates "project" an its components
@@ -347,22 +354,18 @@ function displayProjectListItem(array, container, rowsCount, countPage, currentP
 function generateProjectItem(project) {
     projectContainerElement.insertAdjacentHTML("beforeend",
         `<div class="col-12 col-md-6 col-lg-4 project__item">
-            <img
-            class="project__img"
-            src="${project.src}"
-            loading="lazy"
-            alt="${project.name}">
+            <img class="project__img" width="100%" height="100%" src="${project.src}" loading="lazy" alt="${project.name} project's demo picture">
             <div class="project__content">
                 <H4 class="project__content__title">${project.name}</H4>
                 <p class="project__content__caption">${project.caption}</p>
                 <div class="project__button__wrapper">
-                    <a href="${project.href}" class="button button--fixed button--show-project">
-                    <i class="button__icon ri-arrow-right-circle-line"></i>
-                    <p class="button__title">Online Preview</p>
-                </a>
-                <a href="${project.github}" class="button button--github">
-                    <i class="button__icon ri-github-line"></i>
-                </a>
+                    <a href="${project.href}" class="button button--fixed button--show-project" role="button" aria-label="Show me online preview">
+                        <i class="button__icon ri-arrow-right-circle-line" aria-hidden="true"></i>
+                        <p class="button__title">Online Preview</p>
+                    </a>
+                    <a href="${project.github}" class="button button--github" role="button" aria-label="Open it in github">
+                        <i class="button__icon ri-github-line" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
         </div>`)
@@ -394,15 +397,17 @@ function generateProjectPagination(array, container, rowsCount) {
 
 function generateSubsPrevButton(type) {
     const button = document.createElement("button")
+    const ariaLabelValue = type === "subs" ? "next" : "previous"
+    button.setAttribute("aria-label", `click to see ${ariaLabelValue} page`)
     button.classList.add("project__button")
     switch (type) {
         case "subs":
             button.classList.add("project__button--subs")
-            button.innerHTML = '<i class="ri-arrow-right-wide-fill"></i>'
+            button.innerHTML = '<i class="ri-arrow-right-wide-fill" aria-hidden="true"></i>'
             break;
         case "prev":
             button.classList.add("project__button--prev")
-            button.innerHTML = '<i class="ri-arrow-left-wide-fill"></i>'
+            button.innerHTML = '<i class="ri-arrow-left-wide-fill" aria-hidden="true"></i>'
             break;
     }
     button.addEventListener("click", function () {
@@ -423,6 +428,7 @@ function generateSubsPrevButton(type) {
 function generatePaginationButton(page, array, container) {
     const button = document.createElement('button')
     button.innerHTML = page
+    button.setAttribute("aria-label", `Page number ${page}`)
     button.classList.add("project__button")
     if (page === currentProjectPage) {
         button.classList.add('project__button--active')
