@@ -59,6 +59,7 @@
     --text-color: var(--WHITE);
     --reverse-text-color: var(--DARKEN-DARK);
     --reverse-box-color: var(--DARKEN-LIGHT);
+    --github-button-bg-color: var(--LIGHTEN-DARK);
 }
 
 .light:root {
@@ -79,4 +80,5 @@
     --text-color: var(--LIGHTEN-DARK);
     --reverse-text-color: var(--WHITE);
     --reverse-box-color: var(--LIGHTEN-DARK);
+    --github-button-bg-color: var(--DARKEN-DARK);
 }

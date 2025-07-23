@@ -48,12 +48,6 @@
     }
 }
 
-@keyframes change-scale {
-    to {
-        scale: 0.9
-    }
-}
-
 @keyframes box-shadow {
     25%,
     100% {

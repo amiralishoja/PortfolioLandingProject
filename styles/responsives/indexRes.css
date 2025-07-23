@@ -9,9 +9,11 @@
         height: max(calc(555px + 6.2rem + 2 * var(--padding)), 100vh);
         height: max(calc(555px + 6.2rem + 2 * var(--padding)), 100svh);
     }
+
     .about__title {
         font-size: 5.6rem;
     }
+
     .about__img {
         padding: 5.4rem;
     }
@@ -32,9 +34,11 @@
         height: max(calc(465px + 6.2rem + 2 * var(--padding)), 100vh);
         height: max(calc(465px + 6.2rem + 2 * var(--padding)), 100svh);
     }
+
     .about__title {
         font-size: 4.1rem;
     }
+
     .about__img {
         padding: 4.4rem;
     }
@@ -55,9 +59,11 @@
         height: max(calc(345px + 6.2rem + 2 * var(--padding)), 100vh);
         height: max(calc(345px + 6.2rem + 2 * var(--padding)), 100svh);
     }
+
     .about__title {
         font-size: 3.8rem;
     }
+
     .about__img {
         padding: 3.4rem;
     }
@@ -74,10 +80,12 @@
         height: max(calc(772px + 6.2rem + 2 * var(--padding)), 100vh);
         height: max(calc(772px + 6.2rem + 2 * var(--padding)), 100svh);
     }
+
     .row--about {
         flex-flow: column-reverse nowrap;
         gap: 0;
     }
+
     .about__content {
         gap: 2rem;
         align-items: center;
@@ -107,6 +115,14 @@
         padding: 4.2rem;
     }
 
+    .skills__item {
+        padding-bottom: calc(1.5 * var(--padding) + 0.5rem);
+    }
+
+    .skills__progress {
+        height: 0.5rem;
+    }
+
     .project__content__title {
         font-size: 2.4rem;
     }
@@ -123,11 +139,9 @@
         height: max(calc(722px + 6.2rem + 2 * var(--padding)), 100vh);
         height: max(calc(722px + 6.2rem + 2 * var(--padding)), 100svh);
     }
+
     .about__img {
         padding: 8vw;
-    }
-    .skills__item {
-        width: 100%;
     }
 
     .project__content__title {
@@ -140,8 +154,19 @@
         height: max(calc(580px + 6.2rem + 2 * var(--padding)), 100vh);
         height: max(calc(580px + 6.2rem + 2 * var(--padding)), 100svh);
     }
+
     .about__title {
         font-size: 3.6rem;
+    }
+
+    .skills__item {
+        padding: var(--padding);
+        padding-bottom: calc(var(--padding) + 0.5rem);
+        height: 8rem;
+    }
+
+    .skills__percent {
+        font-size: 2.6rem;
     }
 
     .project__content__title {

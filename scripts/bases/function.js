@@ -179,8 +179,7 @@ function changeValueInResize() {
     if (window.innerWidth > 767 && mobileMenuButtonElement.className == "navigation__mobile-icon ri-close-large-fill") {
         hideMobileMenu()
     }
-    skillsElementOffsetWidth = [...skillsContainerElement.children][0].offsetWidth
-    const nowProjectElementCount = changeValueTwoConditional(window.innerWidth > 567, projectElementDesktopCount, projectElementMobileCount);
+    const nowProjectElementCount = changeValueTwoConditional(window.innerWidth > breakPojectPaginationWidth, projectElementDesktopCount, projectElementMobileCount);
     currentProjectPage = 1;
     if (nowProjectElementCount !== projectElementCount) {
         displayProject()
@@ -311,58 +310,22 @@ function animateSocialTranslation() {
 
 function displaySkills() {
     dataBase.skills.forEach(generateSkillsItem);
-    skillsElementOffsetWidth = [...skillsContainerElement.children][0].offsetWidth
-    setInterval(animateSkillsTranslation, skillsTranslationDuration);
 }
 
 // This is function generates skills item in the "skills" section
 
 function generateSkillsItem(skill) {
-    skillsContainerElement.insertAdjacentHTML("beforeend",
-        `<div class="col-12 col-lg-6 col-xxl-4 flex-center">
-        <div class="skills__item">
-        <i class="${skill.iconClass} colored skills__icon"></i>
-            <div class="skills__content">
-                <H3 class="skills__title">${skill.name}</H3>
-                <p class="skills__caption">${skill.caption}</p>
-            </div>
-        </div>
-    </div>`);
-}
-
-// This is function creates an animate on skills item elements
-
-function animateSkillsTranslation() {
-    const speedTranslateSkillsElem = +skillsWrapperElement.dataset.animationSpeed
-    const skillsWrapperElemOffsetWidth = skillsWrapperElement.offsetWidth
-    skillsTranslationCount++
-
-    setPropertyStyleElement("--speed", `${speedTranslateSkillsElem}ms`, skillsContainerElement)
-    setPropertyStyleElement("--time", `${skillsTranslationDuration}ms`, skillsContainerElement)
-    setPropertyStyleElement("--delay", `${speedTranslateSkillsElem}ms`, skillsContainerElement)
-    setPropertyStyleElement("--width", `${skillsElementOffsetWidth}px`, skillsContainerElement)
-    setPropertyStyleElement("--i", skillsTranslationCount, skillsContainerElement)
-
-    if (skillsCount + 1 - Math.round(skillsWrapperElemOffsetWidth / skillsElementOffsetWidth) === skillsTranslationCount) {
-        [...skillsContainerElement.children].forEach(function (elem) {
-            createdCloneElement(elem, skillsContainerElement)
-        })
-    }
-    if (skillsTranslationCount === skillsCount) {
-        setTimeout(function () {
-            setPropertyStyleElement("--speed", "0ms", skillsContainerElement)
-            setPropertyStyleElement("--i", 0, skillsContainerElement)
-
-            skillsTranslationCount = 0;
-            [...skillsContainerElement.children].map(removeCloneElement)
-        }, speedTranslateSkillsElem);
-    }
+    skillsWrapperElement.insertAdjacentHTML("beforeend", `<div class="col-6 col-md-4 col-lg-3 skills__item">
+                    <img class="skills__picture" src="${skill.svgUrl}" alt="${skill.name}" loading="lazy"/>
+                    <label class="skills__percent" for="progress${skill.name}">${skill.percent}%</label>
+                    <progress class="skills__progress" id="progress${skill.name}" value="${skill.percent}" max="100"></progress>
+                </div>`);
 }
 
 // This is function creates "project" an its components
 
 function displayProject() {
-    projectElementCount = changeValueTwoConditional(window.innerWidth > 576, projectElementDesktopCount, projectElementMobileCount)
+    projectElementCount = changeValueTwoConditional(window.innerWidth > breakPojectPaginationWidth, projectElementDesktopCount, projectElementMobileCount)
     displayProjectListItem(dataBase.project, projectContainerElement, projectElementCount, ProjectPageCount, currentProjectPage)
     generateProjectPagination(dataBase.project, projectPagesElement, projectElementCount)
 }
@@ -383,8 +346,7 @@ function displayProjectListItem(array, container, rowsCount, countPage, currentP
 
 function generateProjectItem(project) {
     projectContainerElement.insertAdjacentHTML("beforeend",
-        `<div class="col-12 col-sm-6 col-lg-4">
-        <div class="project__item">
+        `<div class="col-12 col-md-6 col-lg-4 project__item">
             <img
             class="project__img"
             src="${project.src}"
@@ -393,13 +355,17 @@ function generateProjectItem(project) {
             <div class="project__content">
                 <H4 class="project__content__title">${project.name}</H4>
                 <p class="project__content__caption">${project.caption}</p>
-                <a href="${project.href}" class="button button--fixed button--show-project">
+                <div class="project__button__wrapper">
+                    <a href="${project.href}" class="button button--fixed button--show-project">
                     <i class="button__icon ri-arrow-right-circle-line"></i>
                     <p class="button__title">Online Preview</p>
                 </a>
+                <a href="${project.github}" class="button button--github">
+                    <i class="button__icon ri-github-line"></i>
+                </a>
+                </div>
             </div>
-        </div>
-    </div>`)
+        </div>`)
 }
 
 // This is function generates project pagination button in the "project" section

@@ -15,14 +15,14 @@
     position: relative;
     cursor: pointer;
     overflow: hidden;
-    transition: padding var(--transition);
+    transition: var(--transition);
 }
 
-.button:not(.button--fixed):hover {
+.button:not(.button--fixed, .button--github):hover {
     padding: 1rem 1.5rem 1rem 4.4rem;
 }
 
-.button:hover .button__icon {
+.button:hover:not(.button--github) .button__icon {
     right: calc(100% - 3.6rem);
 }
 
@@ -42,6 +42,7 @@
 
 .button__title {
     font-family: var(--tomorrow-bold-font);
+    font-size: 1.6rem;
 }
 
 .button__title, .button__icon {
@@ -57,5 +58,29 @@
 }
 
 .button--show-project {
-    width: 100%;
+    flex-grow: 1;
+    height: 100%;
+}
+
+.button--github {
+    padding: 0;
+    background-image: none;
+    background-color: var(--github-button-bg-color);
+    height: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button--github:hover {
+    background-color: var(--DARKEN-LIGHT);
+}
+
+.button--github .button__icon {
+    right: auto;
+}
+
+.button--github:hover .button__icon {
+    color: var(--github-button-bg-color);
 }

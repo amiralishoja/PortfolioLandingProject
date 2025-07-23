@@ -99,11 +99,6 @@
 .about__img {
     background: var(--main-linear-gradient-color);
     -webkit-mask: url(../../pictures/about/shape.svg);
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: cover;
-    -webkit-mask-position: center;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
     width: 100%;
     padding: 6.4rem;
 }

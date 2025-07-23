@@ -5,54 +5,55 @@
 */
 
 .skills {
-    padding: calc(2 * var(--gap)) 0;
+    padding: calc(2 * var(--padding)) 0;
 }
 
-.skills__wrapper {
-    width: 100%;
-    overflow: hidden;
-}
 .row--skills {
-    justify-content: start;
-    flex-wrap: nowrap;
-    transition: all var(--speed) ease;
-    transform: translateX(calc((var(--width) * -1 - var(--padding)) * var(--i)));
-    animation: change-scale calc(var(--time) / 2) var(--delay) alternate infinite;
+
 }
 
 .skills__item {
-    width: 100%;
-    height: 18rem;
-    font-size: calc(18rem - 2 * 1.5rem);
-    padding: 1.5rem;
-    border-radius: 0.8rem;
-    background-color: var(--skillsItem-bg-color);
+    height: 10rem;
+    padding: calc(1.5 * var(--padding));
+    padding-bottom: calc(1.5 * var(--padding) + 0.8rem);
+    background-color: var(--DARKEN-DARK);
+    border-radius: 0.5rem;
+    position: relative;
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    transition: var(--transition);
-}
-.skills__icon {
-    font-size: 1em;
-}
-.skills__content {
-    padding: 1rem;
-    height: 100%;
-    display: flex;
-    flex-flow: column nowrap;
+    flex-grow: row nowrap;
     justify-content: space-between;
-    gap: 1.5rem;
-}
-.skills__title {
-    font-family: var(--tomorrow-extra-bold-font);
-    font-size: 3rem;
-}
-.skills__caption {
-    font-size: 1.4rem;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
+    align-items: center;
+    gap: var(--gap);
     overflow: hidden;
+}
+
+.skills__picture {
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+
+.skills__percent {
+    font-size: 3rem;
+    font-family: var(--tomorrow-bold-font);
+}
+
+.skills__progress {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 0.8rem;
+}
+
+.skills__progress::-webkit-progress-bar {
+    background-color: transparent;
+}
+.skills__progress::-webkit-progress-value {
+    background-image: var(--sub-linear-gradient-color);
+    border-top-right-radius: 100%;
+}
+
+.skills__progress::-moz-progress-bar {
+    background-color: transparent;
 }

@@ -14,32 +14,62 @@ const dataBase = {
         { id: 3, name: "GitHub", iconClass: "ri-github-line", href: "https://github.com/amiralishoja" }
     ],
     skills: [
-        { id: 1, name: "Html", iconClass: "devicon-html5-plain", caption: "Elements Attributes Links Pictures Tables Lists Layout Forms Medias ..." },
-        { id: 2, name: "Css", iconClass: "devicon-css3-plain", caption: "Selectors Units Fonts Viewports Variables Animations Backgrounds Function Media Query Grid System Flexbox ..." },
-        { id: 3, name: "Sass", iconClass: "devicon-sass-original", caption: "Variables Nestings Import Partials Mixins Include Extend Function Maps Interpolation Conditions Loops ..." },
-        { id: 4, name: "JavaScript", iconClass: "devicon-javascript-plain", caption: "Variables Operators Data Types Function Events Arrays & Objects Data Methods Loops Error Hadelling Dom Bom Styles Conditions ..." }
+        { id: 1, name: "Html", percent: "90", svgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"},
+        { id: 2, name: "Css", percent: "85", svgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"},
+        { id: 3, name: "Sass", percent: "70", svgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg"},
+        { id: 4, name: "JavaScript", percent: "80", svgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"},
+        { id: 5, name: "Git", percent: "75", svgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"},
+        { id: 6, name: "Tailwind Css", percent: "80", svgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"},
+        { id: 7, name: "React", percent: "85", svgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"},
     ],
     project: [
         {
             id: 1,
-            name: "Rsdetailing",
-            src: "./pictures/projects/1.png",
-            caption: "This landing page example is producd with Html Css and a little Javascript",
-            href: "https://rsdetailing.wuaze.com"
+            name: "Godakht",
+            src: "./pictures/projects/godakht.png",
+            caption: "Chemistry project created for school competition, and i made it with html css js and some js library",
+            href: "https://amiralishoja.github.io/Godakht/dist/",
+            github: "https://github.com/amiralishoja/Godakht"
         },
         {
             id: 2,
-            name: "Hostinger",
-            src: "./pictures/projects/2.png",
-            caption: "This landing page example is producd with Html Sass and a little Javascript",
-            href: "https://hostinger.wuaze.com"
+            name: "Portfolio",
+            src: "./pictures/projects/portfolio.png",
+            caption: "Portfolio landing project created with just html css and js without using any library exept using icons library's",
+            href: "https://amiralishoja.github.io/PortfolioLandingProject/dist",
+            github: "https://github.com/amiralishoja/PortfolioLandingProject"
         },
         {
             id: 3,
-            name: "Motel",
-            src: "./pictures/projects/3.png",
+            name: "Nava Player",
+            src: "./pictures/projects/navaplayer.png",
+            caption: "Nava player project created with html css js, i give it to my mother as a gift",
+            href: "https://amiralishoja.github.io/NavaPlayerProject/dist",
+            github: "https://github.com/amiralishoja/NavaPlayerProject"
+        },
+        {
+            id: 4,
+            name: "Rsdetailing",
+            src: "./pictures/projects/rsdetailing.png",
             caption: "This landing page example is producd with Html Css and a little Javascript",
-            href: "https://motel.wuaze.com"
+            href: "https://amiralishoja.github.io/RsdetailingLandingProject/Dist",
+            github: "https://github.com/amiralishoja/RsdetailingLandingProject"
+        },
+        {
+            id: 5,
+            name: "Motel",
+            src: "./pictures/projects/motel.png",
+            caption: "This landing page example is producd with Html Sass and a little Javascript",
+            href: "https://amiralishoja.github.io/MotelLandingProject/Dist",
+            github: "https://github.com/amiralishoja/MotelLandingProject"
+        },
+        {
+            id: 6,
+            name: "Hostinger",
+            src: "./pictures/projects/hostinger.png",
+            caption: "This landing page example is producd with Html Css and a little Javascript",
+            href: "https://amiralishoja.github.io/HostingerLandingProject/Dist/",
+            github: "https://github.com/amiralishoja/HostingerLandingProject"
         }
     ],
     Information: {

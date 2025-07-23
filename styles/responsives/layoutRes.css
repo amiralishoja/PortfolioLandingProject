@@ -40,6 +40,10 @@
     .footer__title {
         font-size: 4.7rem;
     }
+
+    .button__title {
+        font-size: 1.8rem;
+    }
 }
 
 /* 
@@ -111,6 +115,7 @@
 */
 
 @media (max-width: 576px) {
+
     *,
     *::before,
     *::after {
@@ -124,12 +129,24 @@
     :has(.loading.dis-none) body {
         user-select: none;
     }
+
+    .loading {
+        text-align: initial;
+        padding: calc(50vh - 3ex) 5rem;
+        padding: calc(50svh - 3ex) 5rem;
+    }
 }
 
 @media (max-width: 480px) {
+    .loading {
+        padding: calc(50vh - 4ex) 5rem;
+        padding: calc(50svh - 4ex) 5rem;
+    }
+
     .footer__title {
         font-size: 3rem;
     }
+
     .footer__email__txt {
         font-size: 1.8rem;
     }
