@@ -67,6 +67,7 @@
     .about__img {
         padding: 3.4rem;
     }
+
 }
 
 /* 
@@ -124,7 +125,7 @@
     }
 
     .project__content__title {
-        font-size: 2.4rem;
+        font-size: 4.4rem;
     }
 }
 
@@ -170,6 +171,6 @@
     }
 
     .project__content__title {
-        font-size: 3rem;
+        font-size: 2.8rem;
     }
 }

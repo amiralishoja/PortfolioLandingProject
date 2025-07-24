@@ -358,7 +358,7 @@ function generateProjectItem(project) {
         `<div class="col-12 col-md-6 col-lg-4 project__item">
             <img class="project__img" width="100%" height="100%" src="${project.src}" loading="lazy" alt="${project.name} project's demo picture">
             <div class="project__content">
-                <H4 class="project__content__title">${project.name}</H4>
+                <p class="project__content__title">${project.name}</p>
                 <p class="project__content__caption">${project.caption}</p>
                 <div class="project__button__wrapper">
                     <a href="${project.href}" class="button button--fixed button--show-project" role="button" aria-label="Show me online preview">
