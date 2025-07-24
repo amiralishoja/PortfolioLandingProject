@@ -225,6 +225,8 @@ function displayaboutMe() {
     aboutTitleElement.insertAdjacentHTML("beforeend", dataBase.Information.owner);
     aboutTitleElement.setAttribute("aria-label", `Hey, dear friend I'm ${dataBase.Information.owner}`)
     aboutSloganElement.innerHTML = dataBase.Information.slogan;
+    aboutResumeButtonElement.setAttribute("download", `${dataBase.Information.owner} Resume`)
+    aboutResumeButtonElement.setAttribute("href", dataBase.Information.resumePath)
 }
 
 // This is function creates "about picture" and its components in the "about" section

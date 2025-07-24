@@ -79,7 +79,8 @@ const dataBase = {
         pictureSrc: "./pictures/about/profile.png",
         title: "Towards infinity and beyond",
         caption: "I've always wanted to have my own website. This thought often crossed my mind when I was younger, but I couldn't make it happen, not until I became a front-end developer and discovered the power to build one. I used to dream of launching it.",
-        email: "amiralishoja.info@gmail.com"
+        email: "amiralishoja.info@gmail.com",
+        resumePath: "./download/resume.pdf"
     },
     color: [
         { id: 1, name: "--main-color", vlaue: "#ffa000" },
